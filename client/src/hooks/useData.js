@@ -7,7 +7,7 @@ export function useMarket() {
 
   const fetch_ = useCallback(async () => {
     try {
-      const res  = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/market`)
+      const res  = await fetch(`${import.meta.env.VITE_API_URL || 'https://financeclubwebsite-production.up.railway.app'}/api/market`)
       if (!res.ok) throw new Error('failed')
       const json = await res.json()
       setData(json); setError(null)
