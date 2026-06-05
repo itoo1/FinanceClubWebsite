@@ -5,7 +5,14 @@ const fetch   = require('node-fetch');
 const app  = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    /\.vercel\.app$/,
+    /\.railway\.app$/,
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // ─── SYMBOLS ─────────────────────────────────────────────────────────────────
