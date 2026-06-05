@@ -1,0 +1,153 @@
+.page { min-height: calc(100vh - 120px); }
+
+.header {
+  background: var(--bg2);
+  border-bottom: 2px solid var(--border2);
+  padding: 28px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+  font-family: var(--sans);
+}
+.title {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.subtitle { font-size: 13px; color: var(--text-sec); max-width: 480px; }
+
+.headerRight { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.liveTag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  font-family: var(--mono);
+}
+.liveBg { background: var(--green); color: #fff; }
+.delayedBg { background: var(--muted); color: #fff; }
+.liveDot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--surface);
+  animation: blink 2s ease infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+.updated { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+.refreshBtn {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--accent);
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.refreshBtn:hover { background: var(--accent); color: #fff; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  border: 1px solid var(--border2);
+}
+.table thead tr {
+  background: var(--bg2);
+  border-bottom: 2px solid var(--border2);
+}
+.table th {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-sec);
+  padding: 10px 16px;
+  text-align: left;
+  font-family: var(--sans);
+}
+.table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border2);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+.row { background: var(--bg2); transition: background .15s; }
+.row:hover td { background: var(--bg2); }
+.symCell { font-weight: 600; color: var(--white); font-family: var(--sans); font-size: 13px; }
+.right { text-align: right; }
+.price { color: var(--white); font-weight: 500; }
+
+
+.muted { color: var(--muted); }
+
+.disclaimer {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: var(--mono);
+  padding: 12px 0 24px;
+  border-top: 1px solid var(--border2);
+}
+
+@media (max-width: 768px) {
+  .header { flex-direction: column; align-items: flex-start; }
+  .headerRight { align-items: flex-start; }
+  .table th:nth-child(4), .table td:nth-child(4),
+  .table th:nth-child(5), .table td:nth-child(5) { display: none; }
+}
+/* dark overrides */
+.table { border-color: var(--border) !important; }
+.table thead tr { background: var(--surface) !important; }
+.table th { color: var(--muted) !important; }
+.table td { color: var(--text-sec) !important; border-bottom-color: var(--border) !important; }
+.row { background: var(--bg2) !important; }
+.row:hover td { background: var(--surface) !important; }
+.price { color: var(--white) !important; }
+.symCell { color: var(--white) !important; }
+/* fix market indicators */
+
+
+
+/* high-specificity fix for change column */
+.table tbody tr td
+.table tbody tr td
+
+/* market change colors — direct hex, no variables */
+.up { color: #34d17a !important; }
+.dn { color: #f06060 !important; }
+
+/* ── RESPONSIVE MERCADOS ── */
+@media (max-width: 768px) {
+  .header { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px 16px; }
+  .headerRight { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .title { font-size: 28px; }
+  .table { font-size: 12px; }
+  .table th:nth-child(4), .table td:nth-child(4),
+  .table th:nth-child(5), .table td:nth-child(5) { display: none; }
+  .table th, .table td { padding: 12px 10px; }
+}
+@media (max-width: 480px) {
+  .table th:nth-child(3), .table td:nth-child(3) { display: none; }
+  .symCell { font-size: 12px; }
+  .price { font-size: 12px; }
+}

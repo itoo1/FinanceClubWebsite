@@ -1,0 +1,93 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+
+:root {
+  /* ── DARK NAVY PALETTE ── */
+  --bg:        #0d1526;   /* deep navy — main background */
+  --bg2:       #111d35;   /* slightly lighter navy */
+  --surface:   #162040;   /* card/section surface */
+  --surface2:  #1c2a50;   /* elevated surface */
+  --border:    #1e2e52;   /* subtle border */
+  --border2:   #243460;   /* stronger border */
+
+  /* Text */
+  --text:      #e8edf5;   /* near-white with blue tint */
+  --text-sec:  #8da0c0;   /* muted blue-grey */
+  --muted:     #4d6080;   /* very muted */
+  --black:     #060c1a;   /* absolute dark */
+  --white:     #f0f4fc;
+
+  /* Accent */
+  --accent:    #3d6fcc;   /* bright navy blue — readable on dark */
+  --accent-lt: rgba(61,111,204,0.15);
+  --accent-glow: rgba(61,111,204,0.25);
+
+  /* Semantic */
+  --green:     #34d17a;
+  --red:       #f06060;
+  --gold:      #e6b85c;
+
+  /* Typography */
+  --serif:  'Playfair Display', Georgia, serif;
+  --sans:   'IBM Plex Sans', sans-serif;
+  --mono:   'IBM Plex Mono', monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: var(--sans); }
+input, textarea { font-family: var(--sans); }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border2); }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+              transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+.d1{transition-delay:.05s}.d2{transition-delay:.13s}.d3{transition-delay:.21s}
+.d4{transition-delay:.29s}.d5{transition-delay:.37s}.d6{transition-delay:.45s}
+
+/* ── SKELETON ── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface2) 50%, var(--surface) 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+/* ── TICKER ── */
+@keyframes tickerAnim {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── RESPONSIVE BASE ── */
+/* Mobile first touch targets */
+@media (max-width: 768px) {
+  html { font-size: 15px; }
+  .container { padding: 0 16px; }
+}
+@media (max-width: 480px) {
+  html { font-size: 14px; }
+  .container { padding: 0 14px; }
+}

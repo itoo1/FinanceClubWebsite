@@ -1,0 +1,55 @@
+.page { min-height: calc(100vh - 120px); }
+.header { background:var(--bg2);border-bottom:2px solid var(--border);padding:28px 24px; }
+.eyebrow { font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-family:var(--sans); }
+.title { font-family:var(--serif);font-size:36px;font-weight:700;color:var(--white);letter-spacing:-.02em;margin-bottom:8px; }
+.subtitle { font-size:13px;color:var(--text-sec);max-width:560px; }
+
+.filters { background:var(--bg);border-bottom:1px solid var(--border);padding:14px 24px;display:flex;gap:8px;flex-wrap:wrap;position:sticky;z-index:10; }
+.tab { font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;background:transparent;border:1px solid var(--border);color:var(--text-sec);cursor:pointer;transition:all .15s;font-family:var(--sans); }
+.tab:hover { border-color:var(--muted);color:var(--white); }
+.tabActive { background:var(--accent);border-color:var(--accent);color:#fff; }
+
+.list { padding:8px 0 48px;display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:24px; }
+.reportCard {
+  background:var(--bg);padding:32px 28px;transition:background .2s;
+  border-left:3px solid transparent;
+}
+.reportCard:hover { background:var(--bg2);border-left-color:var(--accent); }
+
+.areaBadge { font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;display:inline-block;padding:3px 10px;margin-bottom:12px;font-family:var(--sans); }
+.areaMacro      { background:#e8eef4;color:#1a4a7a; }
+.areaEquities   { background:#e8f4ee;color:var(--green); }
+.areaRentaFija  { background:#fdf5e6;color:var(--gold); }
+.areaQuant      { background:#fde8e8;color:var(--red); }
+.areaESG        { background:#e8f4ee;color:var(--green); }
+
+.reportTitle { font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.25; }
+.abstract { font-size:14px;color:var(--text-sec);line-height:1.65;margin-bottom:14px;max-width:720px; }
+.reportMeta { font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px;margin-bottom:16px;flex-wrap:wrap; }
+.metaAuthor { color:var(--gold);font-weight:500; }
+.metaDot { color:var(--border); }
+
+.downloadBtn { font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:none;border:1px solid var(--accent);padding:7px 16px;cursor:pointer;transition:all .2s;font-family:var(--sans); }
+.downloadBtn:hover { background:var(--accent);color:#fff; }
+/* dark overrides */
+.reportCard { background: var(--surface) !important; border-left-color: transparent !important; }
+.reportCard:hover { background: var(--surface2) !important; border-left-color: var(--accent) !important; }
+.reportTitle { color: var(--white) !important; }
+.abstract { color: var(--text-sec) !important; }
+.tab { color: var(--text-sec) !important; border-color: var(--border2) !important; }
+.tab:hover { color: var(--white) !important; }
+.tabActive { background: var(--accent) !important; border-color: var(--accent) !important; color: #fff !important; }
+.list { background: var(--border) !important; border-color: var(--border) !important; }
+
+/* ── RESPONSIVE RESEARCH ── */
+@media (max-width: 768px) {
+  .header   { padding: 24px 16px; }
+  .title    { font-size: 28px; }
+  .filters  { padding: 10px 14px; }
+  .grid     { padding: 16px 14px 40px; }
+  .reportCard { padding: 22px 16px; }
+  .reportTitle { font-size: 18px; }
+}
+@media (max-width: 480px) {
+  .reportMeta { flex-wrap: wrap; gap: 4px; }
+}
