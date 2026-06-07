@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 
+const API = import.meta.env.VITE_API_URL || 'https://financeclubwebsite-production.up.railway.app'
+
 export function useMarket() {
   const [data, setData]       = useState({ quotes: [], updatedAt: null })
   const [loading, setLoading] = useState(true)
@@ -7,7 +9,7 @@ export function useMarket() {
 
   const fetch_ = useCallback(async () => {
     try {
-      const res  = await fetch(`${import.meta.env.VITE_API_URL || 'https://financeclubwebsite-production.up.railway.app'}/api/market`)
+      const res  = await fetch(`${API}/api/market`)
       if (!res.ok) throw new Error('failed')
       const json = await res.json()
       setData(json); setError(null)
@@ -19,12 +21,12 @@ export function useMarket() {
   return { ...data, loading, error, refresh: fetch_ }
 }
 
-function useSimple(url) {
+function useSimple(path) {
   const [items, setItems]     = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    fetch(url).then(r => r.json()).then(d => { setItems(d); setLoading(false) }).catch(() => setLoading(false))
-  }, [url])
+    fetch(`${API}${path}`).then(r => r.json()).then(d => { setItems(d); setLoading(false) }).catch(() => setLoading(false))
+  }, [path])
   return { items, loading }
 }
 
