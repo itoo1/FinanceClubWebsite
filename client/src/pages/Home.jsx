@@ -27,12 +27,6 @@ const PARTNERS = [
     tag:'Socio fundador',
   },
   {
-    logo: <div className={s.pLogoTau}><span className={s.tauGreek}>τ</span>TAU</div>,
-    cat:'Institución Académica', name:'TAU',
-    desc:'Colaboración académica en programas de formación, seminarios y acceso a investigación aplicada en finanzas y economía.',
-    tag:'Socio fundador',
-  },
-  {
     logo: (
       <svg width="80" height="32" viewBox="0 0 90 36" fill="none">
         <rect x="0" y="8" width="4" height="20" rx="2" fill="#1a1a1a" opacity=".7"/>
@@ -85,7 +79,7 @@ export default function Home() {
           <div className={s.heroLeft}>
             <div className={s.eyebrow}>
               <span className={s.eyebrowLine} />
-              Sociedad Académica · Est. 2013
+              Sociedad Académica · Est. 2026
             </div>
 
             <h1 className={s.heroTitle}>
@@ -94,9 +88,9 @@ export default function Home() {
             </h1>
 
             <p className={s.heroLead}>
-              Una comunidad de <strong>estudiantes y profesionales</strong> comprometidos
-              con el análisis riguroso de los mercados, la economía aplicada
-              y la teoría de inversión. Donde la disciplina importa.
+              Una comunidad de <strong>estudiantes</strong> dedicada al análisis
+              riguroso de los mercados, la economía aplicada y las finanzas
+              cuantitativas. Donde la profesionalidad y la tecnología se encuentran.
             </p>
 
             <div className={s.heroActions}>
@@ -130,10 +124,10 @@ export default function Home() {
         {/* Metrics bar — z-index 2 */}
         <div className={s.metricsBar}>
           <div className={s.metricsInner}>
-            <Metric val="220+" label="Miembros activos"    delta="↑ +18 este semestre" />
-            <Metric val="13"   label="Años de historia"    delta="↑ Desde 2013" />
-            <Metric val="48"   label="Sesiones anuales"    delta="↑ +4 vs. año anterior" />
-            <Metric val="15"   label="Asesores académicos" delta="↑ 3 nuevos este año" />
+            <Metric val="15+"  label="Socios activos"      delta="↑ Primer mes del club" />
+            <Metric val="6"    label="Áreas de estudio"    delta="↑ Equities, FX, Quant, RF, ESG, M&A" />
+            <Metric val="10+"  label="Sesiones anuales"    delta="↑ Calendario 2026" />
+            <Metric val="3+"   label="Asesores académicos" delta="↑ Mentores activos" />
           </div>
         </div>
 
@@ -150,9 +144,9 @@ export default function Home() {
           </div>
 
           <blockquote className={`${s.leadQuote} reveal`}>
-            Desde 2013, cultivamos el pensamiento crítico y la disciplina analítica
-            para navegar la complejidad de los mercados.{' '}
-            <strong>Más allá del ruido, siempre el análisis.</strong>
+            Desde 2026, cultivamos el pensamiento crítico y las habilidades técnicas
+            necesarias para navegar la complejidad de los mercados modernos.{' '}
+            <strong>Profesionalidad, tecnología y análisis cuantitativo.</strong>
           </blockquote>
 
           <div className={s.pillarGrid}>
@@ -238,9 +232,9 @@ export default function Home() {
         <div className="container">
           <div className={`${s.ctaBox} reveal`}>
             <div className={s.ctaContent}>
-              <div className={s.sectionLabel} style={{color:'rgba(255,255,255,.5)'}}>¿Listo para unirte?</div>
-              <h2 className={s.ctaTitle}>La membresía es <em>gratuita</em></h2>
-              <p className={s.ctaBody}>Abierta a todos los estudiantes. Escríbenos y te informamos sobre la próxima sesión de bienvenida.</p>
+              <div className={s.sectionLabel} style={{color:'rgba(255,255,255,.5)'}}>Únete al club</div>
+              <h2 className={s.ctaTitle}>Construye tu carrera <em>en finanzas</em></h2>
+              <p className={s.ctaBody}>Abierto a todos los estudiantes interesados en mercados, análisis cuantitativo y tecnología financiera. Escríbenos para la próxima sesión de bienvenida.</p>
             </div>
             <div className={s.ctaActions}>
               <Link to="/contacto" className={s.ctaBtn}>Contactar ahora →</Link>
