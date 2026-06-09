@@ -67,23 +67,31 @@ app.get('/api/news',     (req, res) => res.json(NEWS));
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const MEMBERS = [
-  { id:1,  name:'Valentina Reyes',   role:'Presidenta',          career:'Ingeniería Comercial', year:'4.º', area:'Renta Variable',      avatar:'VR', bio:'Especialista en valoración de empresas del sector retail latinoamericano.' },
-  { id:2,  name:'Sebastián Morales', role:'VP Análisis',         career:'Economía',             year:'5.º', area:'Macro & FX',           avatar:'SM', bio:'Economista enfocado en política monetaria y ciclos de commodities.' },
-  { id:3,  name:'Catalina Torres',   role:'VP Research',         career:'Finanzas',             year:'4.º', area:'Renta Fija',           avatar:'CT', bio:'Analista de crédito soberano y estrategias de renta fija en USD.' },
-  { id:4,  name:'Matías Fuentes',    role:'Director de Riesgo',  career:'Ing. Comercial',       year:'5.º', area:'Derivados',            avatar:'MF', bio:'Modelos de gestión de riesgo de mercado y cobertura con opciones.' },
-  { id:5,  name:'Isadora Vega',      role:'Directora ESG',       career:'Economía',             year:'3.º', area:'Finanzas Sostenibles', avatar:'IV', bio:'Criterios ESG, bonos verdes y finanzas de la transición energética.' },
-  { id:6,  name:'Diego Contreras',   role:'Director de Datos',   career:'Ingeniería Civil',     year:'4.º', area:'Quant / ML',           avatar:'DC', bio:'Factor investing, modelos cuantitativos y machine learning aplicado.' },
-  { id:7,  name:'Antonia Silva',     role:'Tesorera',            career:'Contabilidad',         year:'3.º', area:'M&A / Valoración',     avatar:'AS', bio:'Análisis de fusiones y adquisiciones y modelos de valoración DCF.' },
-  { id:8,  name:'Nicolás Bravo',     role:'Dir. Relaciones',     career:'Ing. Comercial',       year:'3.º', area:'Banca de Inversión',   avatar:'NB', bio:'Estructuración de deals y relaciones con la industria financiera.' },
-  { id:9,  name:'Fernanda Molina',   role:'Analista Senior',     career:'Economía',             year:'4.º', area:'Renta Variable',       avatar:'FM', bio:'Análisis fundamental de empresas de consumo masivo y retail.' },
-  { id:10, name:'Andrés Castillo',   role:'Analista Senior',     career:'Finanzas',             year:'4.º', area:'Macro & FX',           avatar:'AC', bio:'Estrategia macro global y posicionamiento en divisas emergentes.' },
-  { id:11, name:'Pilar Herrera',     role:'Analista',            career:'Economía',             year:'2.º', area:'Renta Fija',           avatar:'PH', bio:'Análisis de curvas de rendimiento y spread de crédito corporativo.' },
-  { id:12, name:'Tomás Espinoza',    role:'Analista',            career:'Ing. Comercial',       year:'2.º', area:'Quant / ML',           avatar:'TE', bio:'Backtesting de estrategias algorítmicas en mercados latinoamericanos.' },
+  // ─── Directiva ───
+  { id:1,  name:'Valentina Reyes',   role:'Presidenta',                         career:'Ingeniería Comercial', year:'4.º', area:'Renta Variable',      avatar:'VR', bio:'Lidera la estrategia general del club y representa a la organización ante la facultad y los socios institucionales.' },
+  { id:2,  name:'Sebastián Morales', role:'Vicepresidente',                      career:'Economía',             year:'5.º', area:'Macro & FX',           avatar:'SM', bio:'Coordina las áreas internas del club y supervisa la calidad de los contenidos académicos producidos por los socios.' },
+  { id:3,  name:'Catalina Torres',   role:'Directora de Relaciones Corporativas',career:'Ingeniería Comercial', year:'4.º', area:'Banca de Inversión',  avatar:'CT', bio:'Gestiona vínculos con empresas, instituciones financieras y partners para abrir oportunidades a los miembros.' },
+  { id:4,  name:'Matías Fuentes',    role:'Director de Marketing y Comunicaciones',career:'Ingeniería Comercial', year:'5.º', area:'Comunicaciones',      avatar:'MF', bio:'Responsable de la identidad visual del club, redes sociales y comunicación pública de las actividades.' },
+  { id:5,  name:'Isadora Vega',      role:'Directora de Eventos y Formación',    career:'Economía',             year:'3.º', area:'Formación',            avatar:'IV', bio:'Planifica el calendario de talleres, charlas y formación técnica que reciben los miembros durante el semestre.' },
+
+  // ─── Miembros Senior ───
+  { id:6,  name:'Diego Contreras',   role:'Miembro Senior',  career:'Ingeniería Civil',     year:'4.º', area:'Quant / ML',           avatar:'DC', bio:'Trabaja en modelos cuantitativos y machine learning aplicado al análisis de mercados.' },
+  { id:7,  name:'Antonia Silva',     role:'Miembro Senior',  career:'Contabilidad',         year:'3.º', area:'M&A / Valoración',     avatar:'AS', bio:'Especialista en modelos de valoración DCF y análisis de fusiones y adquisiciones.' },
+  { id:8,  name:'Fernanda Molina',   role:'Miembro Senior',  career:'Economía',             year:'4.º', area:'Renta Variable',       avatar:'FM', bio:'Análisis fundamental de empresas de consumo masivo y retail latinoamericano.' },
+  { id:9,  name:'Andrés Castillo',   role:'Miembro Senior',  career:'Ingeniería Comercial', year:'4.º', area:'Macro & FX',           avatar:'AC', bio:'Estrategia macroeconómica y posicionamiento en divisas de mercados emergentes.' },
+  { id:10, name:'Nicolás Bravo',     role:'Miembro Senior',  career:'Ingeniería Comercial', year:'3.º', area:'Renta Fija',           avatar:'NB', bio:'Análisis de instrumentos de deuda y estructura de curvas soberanas.' },
+
+  // ─── Miembros ───
+  { id:11, name:'Pilar Herrera',     role:'Miembro', career:'Economía',             year:'2.º', area:'Renta Fija',           avatar:'PH', bio:'Análisis de curvas de rendimiento y spread de crédito corporativo.' },
+  { id:12, name:'Tomás Espinoza',    role:'Miembro', career:'Ingeniería Comercial', year:'2.º', area:'Quant / ML',           avatar:'TE', bio:'Backtesting de estrategias algorítmicas en mercados latinoamericanos.' },
+  { id:13, name:'Camila Rojas',      role:'Miembro', career:'Economía',             year:'2.º', area:'ESG',                  avatar:'CR', bio:'Interesada en bonos verdes y finanzas de la transición energética.' },
+  { id:14, name:'Felipe Núñez',      role:'Miembro', career:'Ingeniería Comercial', year:'2.º', area:'Renta Variable',       avatar:'FN', bio:'Análisis sectorial y construcción de tesis de inversión en equities.' },
+  { id:15, name:'Javiera Soto',      role:'Miembro', career:'Contabilidad',         year:'1.º', area:'M&A / Valoración',     avatar:'JS', bio:'Aprendiendo modelación financiera y técnicas de valoración corporativa.' },
 ];
 
 const EVENTS = [
   { id:1, day:'05', month:'JUN', name:'Análisis de Resultados Q1 2026',   time:'19:00', location:'Aula Magna',        format:'Presencial', category:'Análisis',    desc:'Revisión de resultados corporativos y ajuste de tesis para el segundo semestre.' },
-  { id:2, day:'12', month:'JUN', name:'Taller: Valoración DCF Avanzado',  time:'18:30', location:'Lab. Informática',  format:'Presencial', category:'Taller',      desc:'Modelación de flujos de caja descontados con análisis de sensibilidad Monte Carlo.' },
+  { id:2, day:'12', month:'JUN', name:'Taller: Valoración DCF Avanzado',  time:'18:30', location:'Lab. Finanzas',  format:'Presencial', category:'Taller',      desc:'Modelación de flujos de caja descontados con análisis de sensibilidad Monte Carlo.' },
   { id:3, day:'19', month:'JUN', name:'Mesa Redonda: Fintech 2026',       time:'19:00', location:'Sala Conferencias', format:'Híbrido',    category:'Conferencia', desc:'Debate sobre IA en gestión de activos y el futuro de la banca digital en Chile.' },
   { id:4, day:'24', month:'JUN', name:'Conferencia Anual Finance Club',time:'09:00', location:'Hotel W Santiago', format:'Presencial', category:'Conferencia', desc:'Evento insignia del club. Ponentes de la industria, paneles y networking.' },
   { id:5, day:'08', month:'JUL', name:'Workshop: Riesgo Crediticio',      time:'19:00', location:'Online · Zoom',     format:'Online',     category:'Taller',      desc:'Análisis de ratings soberanos y corporativos. Acceso libre para miembros.' },

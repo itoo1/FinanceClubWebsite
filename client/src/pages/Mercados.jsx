@@ -27,7 +27,7 @@ export default function Mercados() {
         <div className={s.headerLeft}>
           <div className={s.eyebrow}>Mercados en vivo</div>
           <h1 className={s.title}>Cotizaciones</h1>
-          <p className={s.subtitle}>Datos actualizados cada 60 segundos desde Yahoo Finance. Retardo máximo 15 minutos.</p>
+          <p className={s.subtitle}>Cotizaciones globales actualizadas en tiempo real. Índices, divisas, commodities y criptoactivos en una sola pantalla.</p>
         </div>
         <div className={s.headerRight}>
           <div className={`${s.liveTag} ${live ? s.liveBg : s.delayedBg}`}>
@@ -66,7 +66,7 @@ export default function Mercados() {
             ))}
           </tbody>
         </table>
-        <div className={s.disclaimer}>Datos con posible retraso de hasta 15 minutos. Solo para fines educativos.</div>
+        <div className={s.disclaimer}>Fuente: Yahoo Finance. Información con fines educativos.</div>
       </div>
     </main>
   )

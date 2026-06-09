@@ -13,7 +13,7 @@ const PILLARS = [
 
 const ACTIVITIES = [
   ['Sesiones de análisis semanal',     'Jueves · 19:00', 'Presencial',       'Activo'],
-  ['Talleres de modelos financieros',  'Quincenal',      'Lab. Informática',  'Activo'],
+  ['Talleres de modelos financieros',  'Quincenal',      'Lab. Finanzas',  'Activo'],
   ['Competición de carteras',          'Semestral',      'Online',            'Activo'],
   ['Conferencia anual de inversión',   'Junio',          'Híbrido',           'Planificado'],
   ['Publicación de informes research', 'Mensual',        'Digital',           'Activo'],
@@ -36,8 +36,8 @@ const PARTNERS = [
       </svg>
     ),
     cat:'Banca & Servicios Financieros', name:'Itaú',
-    desc:'Colabora en programas de formación, prácticas profesionales y acceso al ecosistema financiero regional latinoamericano.',
-    tag:'Socio institucional',
+    desc:'Financia el Laboratorio de Finanzas de la facultad y apoya al club con capacitaciones profesionales y acceso al ecosistema financiero regional.',
+    tag:'Socio fundador',
   },
   { placeholder: true },
 ]
@@ -88,9 +88,9 @@ export default function Home() {
             </h1>
 
             <p className={s.heroLead}>
-              Una comunidad de <strong>estudiantes</strong> dedicada al análisis
-              riguroso de los mercados, la economía aplicada y las finanzas
-              cuantitativas. Donde la profesionalidad y la tecnología se encuentran.
+              El club de finanzas de la <strong>Universidad de Concepción</strong>.
+              Una comunidad de estudiantes dedicada al análisis riguroso de los mercados,
+              la economía aplicada y las finanzas cuantitativas. Donde la profesionalidad y la tecnología se encuentran.
             </p>
 
             <div className={s.heroActions}>

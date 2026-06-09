@@ -4,11 +4,11 @@ import { useMembers } from '../hooks/useData'
 import s from './Directorio.module.css'
 
 const AREAS = ['Todos','Renta Variable','Macro & FX','Renta Fija','Derivados','Quant / ML','ESG','M&A / Valoración','Banca de Inversión','Finanzas Sostenibles']
-const ROLES = ['Todos','Directivo','Analista Senior','Analista']
+const ROLES = ['Todos','Directiva','Miembro Senior','Miembro']
 function roleGroup(role) {
-  if (['Presidenta','VP Análisis','VP Research','Director de Riesgo','Directora ESG','Director de Datos','Tesorera','Dir. Relaciones'].includes(role)) return 'Directivo'
-  if (role === 'Analista Senior') return 'Analista Senior'
-  return 'Analista'
+  if (['Presidenta','Presidente','Vicepresidente','Vicepresidenta','Directora de Relaciones Corporativas','Director de Relaciones Corporativas','Directora de Marketing y Comunicaciones','Director de Marketing y Comunicaciones','Directora de Eventos y Formación','Director de Eventos y Formación'].includes(role)) return 'Directiva'
+  if (role === 'Miembro Senior') return 'Miembro Senior'
+  return 'Miembro'
 }
 
 export default function Directorio() {

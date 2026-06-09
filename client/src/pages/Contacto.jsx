@@ -25,7 +25,7 @@ export default function Contacto() {
       <div className={s.header}>
         <div className={s.eyebrow}>Contacto</div>
         <h1 className={s.title}>Únete al Club</h1>
-        <p className={s.subtitle}>La membresía es <strong>gratuita</strong> y está abierta a todos los estudiantes. Escríbenos y te informamos sobre la próxima sesión de bienvenida.</p>
+        <p className={s.subtitle}>Somos el club de finanzas de la <strong>Universidad de Concepción</strong>. Abiertos a todos los estudiantes interesados en mercados, análisis cuantitativo y tecnología financiera.</p>
       </div>
 
       <div className="container">
@@ -35,8 +35,8 @@ export default function Contacto() {
               <div className={s.secTitle}>Información de contacto</div>
               {[
                 ['Email',    'contacto@clubdefinanzas.org'],
-                ['Sesiones', 'Jueves · 19:00 h · Aula Magna'],
-                ['Sede',     'Facultad de CC. Económicas · Sala 201'],
+                ['Sesiones', 'Jueves · 17:00 h · Lab. Finanzas'],
+                ['Sede',     'Facultad de Cs. Económicas y Administrativas · Lab. Finanzas · Universidad de Concepción'],
                 ['Redes',    'LinkedIn · Instagram · Newsletter'],
               ].map(([l,v]) => (
                 <div className={s.infoRow} key={l}>
