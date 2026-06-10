@@ -28,12 +28,10 @@ const PARTNERS = [
   },
   {
     logo: (
-      <div className={s.itauLogo}>
-        <svg width="44" height="44" viewBox="0 0 100 100" fill="none">
-          <path d="M50 4 C 80 4, 96 20, 96 50 C 96 80, 80 96, 50 96 C 20 96, 4 80, 4 50 C 4 20, 20 4, 50 4 Z" fill="#FF6900"/>
-          <text x="50" y="68" textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontSize="38" fontWeight="900" fill="#000">itaú</text>
-        </svg>
-      </div>
+      <svg width="44" height="44" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 4 C 80 4, 96 20, 96 50 C 96 80, 80 96, 50 96 C 20 96, 4 80, 4 50 C 4 20, 20 4, 50 4 Z" fill="#FF6900"/>
+        <text x="50" y="68" textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontSize="38" fontWeight="900" fill="#ffffff" letterSpacing="-1">itaú</text>
+      </svg>
     ),
     cat:'Banca & Servicios Financieros', name:'Itaú',
     desc:'Financia el Laboratorio de Finanzas de la facultad y apoya al club con capacitaciones profesionales. Conecta a estudiantes y profesionales con el ecosistema financiero regional.',

@@ -279,14 +279,7 @@
   align-items: center;
   height: 40px;
 }
-.itauLogo {
-  display: inline-flex;
-  align-items: center;
-  background: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  height: 44px;
-}
+
 .pLogoTau { font-family:var(--serif); font-size:24px; font-weight:700; letter-spacing:.04em; color:var(--black); opacity:.7; display:flex; align-items:center; gap:8px; transition:opacity .2s; }
 .partnerCard:hover .pLogoTau { opacity:1; }
 .tauGreek { font-size:28px; font-style:italic; color:var(--accent); line-height:1; }
@@ -373,7 +366,6 @@
 .partnerDesc { color: var(--text-sec) !important; }
 .partnerTag { border-color: var(--border2) !important; color: var(--muted) !important; }
 .pLogoBloomberg { color: var(--white) !important; }
-.itauLogo { background: #fff !important; }
 .blB { background: var(--white) !important; color: var(--black) !important; }
 .pLogoTau { color: var(--white) !important; }
 .tauGreek { color: var(--accent) !important; }
