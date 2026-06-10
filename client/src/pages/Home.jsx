@@ -21,22 +21,22 @@ const ACTIVITIES = [
 
 const PARTNERS = [
   {
-    logo: <div className={s.pLogoBloomberg}><span className={s.blB}>B</span>bloomberg</div>,
+    logo: <div className={s.pLogoBloomberg}>Bloomberg</div>,
     cat:'Datos & Terminal', name:'Bloomberg',
-    desc:'Acceso a terminales Bloomberg para análisis de mercados en tiempo real, datos históricos y herramientas de research profesional.',
+    desc:'Acceso a terminales Bloomberg para análisis de mercados en tiempo real, datos históricos y herramientas de research profesional. Abierto a estudiantes y profesionales que quieran integrarse al club.',
     tag:'Socio fundador',
   },
   {
     logo: (
-      <svg width="80" height="32" viewBox="0 0 90 36" fill="none">
-        <rect x="0" y="8" width="4" height="20" rx="2" fill="#1a1a1a" opacity=".7"/>
-        <path d="M10 18 C10 10 22 4 28 4 C34 4 38 8 38 14 C38 20 34 24 28 28 C22 32 10 28 10 22Z" fill="none" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" opacity=".7"/>
-        <circle cx="4" cy="4" r="3" fill="#1a1a1a" opacity=".7"/>
-        <text x="48" y="24" fontFamily="IBM Plex Sans,sans-serif" fontSize="18" fontWeight="600" fill="#1a1a1a" opacity=".7">itaú</text>
-      </svg>
+      <div className={s.itauLogo}>
+        <svg width="44" height="44" viewBox="0 0 100 100" fill="none">
+          <path d="M50 4 C 80 4, 96 20, 96 50 C 96 80, 80 96, 50 96 C 20 96, 4 80, 4 50 C 4 20, 20 4, 50 4 Z" fill="#FF6900"/>
+          <text x="50" y="68" textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontSize="38" fontWeight="900" fill="#000">itaú</text>
+        </svg>
+      </div>
     ),
     cat:'Banca & Servicios Financieros', name:'Itaú',
-    desc:'Financia el Laboratorio de Finanzas de la facultad y apoya al club con capacitaciones profesionales y acceso al ecosistema financiero regional.',
+    desc:'Financia el Laboratorio de Finanzas de la facultad y apoya al club con capacitaciones profesionales. Conecta a estudiantes y profesionales con el ecosistema financiero regional.',
     tag:'Socio fundador',
   },
   { placeholder: true },
