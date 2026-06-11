@@ -31,7 +31,7 @@ export default function Footer() {
           <div className={s.social}>
             {['LinkedIn','Instagram','Twitter / X','Spotify'].map(n => <a key={n} href="#">{n}</a>)}
           </div>
-          <span><Link to="/privacidad">Privacidad · Términos</Link></span>
+          <span>Privacidad · Términos</span>
         </div>
       </div>
     </footer>
