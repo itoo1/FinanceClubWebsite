@@ -78,6 +78,9 @@ export default function Contacto() {
                 {status === 'done'    && 'Mensaje enviado ✓'}
                 {status === 'error'   && 'Error — intenta de nuevo'}
               </button>
+              <p className={s.privacyNotice}>
+                Al enviar este formulario aceptas que tus datos sean usados únicamente para contactarte sobre las actividades del club. No los compartimos con terceros.
+              </p>
             </form>
           </div>
         </div>
