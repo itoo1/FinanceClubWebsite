@@ -68,7 +68,7 @@ app.get('/api/news',     (req, res) => res.json(NEWS));
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const MEMBERS = [
   // ─── Directiva ───
-  { id:1,  name:'Valentina Reyes',   role:'Presidenta',                         career:'Ingeniería Comercial', year:'4.º', area:'Renta Variable',      avatar:'VR', bio:'Lidera la estrategia general del club y representa a la organización ante la facultad y los socios institucionales.' },
+  { id:1,  name:'Benjamín Pérez',    role:'Presidente',                         career:'Economía',             year:'4.º', area:'Renta Variable',      avatar:'BP', bio:'Lidera la estrategia general del club y representa a la organización ante la facultad y los socios institucionales.' },
   { id:2,  name:'Sebastián Morales', role:'Vicepresidente',                      career:'Economía',             year:'5.º', area:'Macro & FX',           avatar:'SM', bio:'Coordina las áreas internas del club y supervisa la calidad de los contenidos académicos producidos por los socios.' },
   { id:3,  name:'Catalina Torres',   role:'Directora de Relaciones Corporativas',career:'Ingeniería Comercial', year:'4.º', area:'Banca de Inversión',  avatar:'CT', bio:'Gestiona vínculos con empresas, instituciones financieras y partners para abrir oportunidades a los miembros.' },
   { id:4,  name:'Matías Fuentes',    role:'Director de Marketing y Comunicaciones',career:'Ingeniería Comercial', year:'5.º', area:'Comunicaciones',      avatar:'MF', bio:'Responsable de la identidad visual del club, redes sociales y comunicación pública de las actividades.' },
