@@ -8,6 +8,49 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+// ─── RATE LIMITING ────────────────────────────────────────────────────
+// Simple in-memory rate limiter: 60 requests per minute per IP
+const rateLimit = new Map();
+const RATE_WINDOW = 60_000;    // 1 minute
+const RATE_MAX    = 60;        // 60 requests per minute per IP
+
+app.use((req, res, next) => {
+  const ip   = req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress || 'unknown';
+  const now  = Date.now();
+  const data = rateLimit.get(ip) || { count: 0, reset: now + RATE_WINDOW };
+
+  if (now > data.reset) {
+    data.count = 0;
+    data.reset = now + RATE_WINDOW;
+  }
+  data.count++;
+  rateLimit.set(ip, data);
+
+  if (data.count > RATE_MAX) {
+    return res.status(429).json({ error: 'Too many requests. Please try again later.' });
+  }
+  next();
+});
+
+// Cleanup old entries every 5 minutes
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, data] of rateLimit.entries()) {
+    if (now > data.reset + RATE_WINDOW) rateLimit.delete(ip);
+  }
+}, 5 * 60_000);
+
+
+// ─── SECURITY HEADERS ────────────────────────────────────────────────
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  next();
+});
+
+
+
 // ─── SYMBOLS ─────────────────────────────────────────────────────────────────
 const SYMBOLS = [
   { sym: 'IPSA',      yf: '%5EIPSA'       },
@@ -69,13 +112,13 @@ app.get('/api/news',     (req, res) => res.json(NEWS));
 const MEMBERS = [
   // ─── Directiva ───
   { id:1,  name:'Benjamín Pérez',    role:'Presidente',                         career:'Economía',             year:'4.º', area:'Renta Variable',      avatar:'BP', bio:'Lidera la estrategia general del club y representa a la organización ante la facultad y los socios institucionales.' },
-  { id:2,  name:'Sebastián Morales', role:'Vicepresidente',                      career:'Economía',             year:'5.º', area:'Macro & FX',           avatar:'SM', bio:'Coordina las áreas internas del club y supervisa la calidad de los contenidos académicos producidos por los socios.' },
-  { id:3,  name:'Catalina Torres',   role:'Directora de Relaciones Corporativas',career:'Ingeniería Comercial', year:'4.º', area:'Banca de Inversión',  avatar:'CT', bio:'Gestiona vínculos con empresas, instituciones financieras y partners para abrir oportunidades a los miembros.' },
-  { id:4,  name:'Matías Fuentes',    role:'Director de Marketing y Comunicaciones',career:'Ingeniería Comercial', year:'5.º', area:'Comunicaciones',      avatar:'MF', bio:'Responsable de la identidad visual del club, redes sociales y comunicación pública de las actividades.' },
-  { id:5,  name:'Isadora Vega',      role:'Directora de Eventos y Formación',    career:'Economía',             year:'3.º', area:'Formación',            avatar:'IV', bio:'Planifica el calendario de talleres, charlas y formación técnica que reciben los miembros durante el semestre.' },
+  { id:2,  name:'Javiera Inostroza',  role:'Vicepresidenta',                      career:'Administración',        year:'4.º', area:'Macro & FX',           avatar:'JI', bio:'Coordina las áreas internas del club y supervisa la calidad de los contenidos académicos producidos por los socios.' },
+  { id:3,  name:'Claudio San Martín', role:'Director de Relaciones Corporativas', career:'Administración',        year:'5.º', area:'Banca de Inversión',  avatar:'CS', bio:'Gestiona vínculos con empresas, instituciones financieras y partners para abrir oportunidades a los miembros.' },
+  { id:4,  name:'Macarena Pereira',  role:'Directora de Comunicación',            career:'Administración',        year:'4.º', area:'Comunicaciones',      avatar:'MP', bio:'Responsable de la identidad visual del club, redes sociales y comunicación pública de las actividades.' },
+  { id:5,  name:'Ignacia Inostroza', role:'Directora de Eventos y Formación',    career:'Ingeniería Comercial', year:'3.º', area:'Formación',            avatar:'II', bio:'Planifica el calendario de talleres, charlas y formación técnica que reciben los miembros durante el semestre.' },
 
   // ─── Miembros Senior ───
-  { id:6,  name:'Diego Contreras',   role:'Miembro Senior',  career:'Ingeniería Civil',     year:'4.º', area:'Quant / ML',           avatar:'DC', bio:'Trabaja en modelos cuantitativos y machine learning aplicado al análisis de mercados.' },
+  { id:6,  name:'Isidora Aravena',   role:'Directora de Marketing',  career:'Administración',        year:'4.º', area:'Comunicaciones',       avatar:'IA', bio:'Responsable de la estrategia de marketing y posicionamiento del club en la facultad y redes sociales.' },
   { id:7,  name:'Antonia Silva',     role:'Miembro Senior',  career:'Contabilidad',         year:'3.º', area:'M&A / Valoración',     avatar:'AS', bio:'Especialista en modelos de valoración DCF y análisis de fusiones y adquisiciones.' },
   { id:8,  name:'Fernanda Molina',   role:'Miembro Senior',  career:'Economía',             year:'4.º', area:'Renta Variable',       avatar:'FM', bio:'Análisis fundamental de empresas de consumo masivo y retail latinoamericano.' },
   { id:9,  name:'Andrés Castillo',   role:'Miembro Senior',  career:'Ingeniería Comercial', year:'4.º', area:'Macro & FX',           avatar:'AC', bio:'Estrategia macroeconómica y posicionamiento en divisas de mercados emergentes.' },
