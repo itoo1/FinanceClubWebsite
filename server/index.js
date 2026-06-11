@@ -8,6 +8,49 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+// ─── RATE LIMITING ────────────────────────────────────────────────────
+// Simple in-memory rate limiter: 60 requests per minute per IP
+const rateLimit = new Map();
+const RATE_WINDOW = 60_000;    // 1 minute
+const RATE_MAX    = 60;        // 60 requests per minute per IP
+
+app.use((req, res, next) => {
+  const ip   = req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress || 'unknown';
+  const now  = Date.now();
+  const data = rateLimit.get(ip) || { count: 0, reset: now + RATE_WINDOW };
+
+  if (now > data.reset) {
+    data.count = 0;
+    data.reset = now + RATE_WINDOW;
+  }
+  data.count++;
+  rateLimit.set(ip, data);
+
+  if (data.count > RATE_MAX) {
+    return res.status(429).json({ error: 'Too many requests. Please try again later.' });
+  }
+  next();
+});
+
+// Cleanup old entries every 5 minutes
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, data] of rateLimit.entries()) {
+    if (now > data.reset + RATE_WINDOW) rateLimit.delete(ip);
+  }
+}, 5 * 60_000);
+
+
+// ─── SECURITY HEADERS ────────────────────────────────────────────────
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  next();
+});
+
+
+
 // ─── SYMBOLS ─────────────────────────────────────────────────────────────────
 const SYMBOLS = [
   { sym: 'IPSA',      yf: '%5EIPSA'       },

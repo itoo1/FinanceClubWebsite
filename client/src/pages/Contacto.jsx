@@ -1,87 +1,39 @@
-import React, { useState } from 'react'
-import s from './Contacto.module.css'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import s from './Footer.module.css'
 
-export default function Contacto() {
-  const [status, setStatus] = useState('idle')
-
-  async function handleSubmit(e) {
-    e.preventDefault()
-    setStatus('sending')
-    try {
-      const res = await fetch('https://formspree.io/f/mrednzvj', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(e.target)
-      })
-      if (res.ok) {
-        setStatus('done')
-        setTimeout(() => { setStatus('idle'); e.target.reset() }, 3500)
-      } else { setStatus('error'); setTimeout(() => setStatus('idle'), 3500) }
-    } catch { setStatus('error'); setTimeout(() => setStatus('idle'), 3500) }
-  }
-
+export default function Footer() {
   return (
-    <main className={s.page}>
-      <div className={s.header}>
-        <div className={s.eyebrow}>Contacto</div>
-        <h1 className={s.title}>Únete al Club</h1>
-        <p className={s.subtitle}>Somos el club de finanzas de la <strong>Universidad de Concepción</strong>. Abiertos a todos los estudiantes interesados en mercados, análisis cuantitativo y tecnología financiera.</p>
-      </div>
-
-      <div className="container">
+    <footer className={s.footer}>
+      <div className={`container ${s.inner}`}>
         <div className={s.grid}>
-          <div className={s.left}>
-            <div className={s.infoSection}>
-              <div className={s.secTitle}>Información de contacto</div>
-              {[
-                ['Email',    'contacto@clubdefinanzas.org'],
-                ['Sesiones', 'Jueves · 17:00 h · Lab. Finanzas'],
-                ['Sede',     'Facultad de Cs. Económicas y Administrativas · Lab. Finanzas · Universidad de Concepción'],
-                ['Redes',    'LinkedIn · Instagram · Newsletter'],
-              ].map(([l,v]) => (
-                <div className={s.infoRow} key={l}>
-                  <span className={s.infoLabel}>{l}</span>
-                  <span className={s.infoVal}>{v}</span>
-                </div>
-              ))}
-            </div>
-            <div className={s.infoSection}>
-              <div className={s.secTitle}>¿Por qué unirte?</div>
-              {['Acceso a terminales Bloomberg','Informes de research exclusivos','Red de alumni en la industria','Competición semestral de carteras','Talleres con profesionales'].map(b => (
-                <div className={s.benefit} key={b}>
-                  <span className={s.bulletAccent}>▸</span> {b}
-                </div>
-              ))}
-            </div>
+          <div className={s.brand}>
+            <Link to="/" className={s.logo}>Finance <span>Club</span></Link>
+            <p className={s.tagline}>El espacio de análisis financiero, macroeconomía y mercados de capital para la próxima generación de profesionales.</p>
           </div>
-
-          <div className={s.formBox}>
-            <div className={s.formTitle}>Formulario de contacto</div>
-            <form onSubmit={handleSubmit} className={s.form}>
-              {[
-                ['nombre','Nombre completo','text','Ej. María García',true],
-                ['email','Correo electrónico','email','nombre@universidad.edu',true],
-                ['carrera','Carrera / Año','text','Ej. Ingeniería Comercial, 3.º',false],
-              ].map(([name,label,type,ph,req]) => (
-                <div className={s.field} key={name}>
-                  <label className={s.label}>{label}</label>
-                  <input className={s.input} type={type} name={name} placeholder={ph} required={req} />
-                </div>
-              ))}
-              <div className={s.field}>
-                <label className={s.label}>Mensaje</label>
-                <textarea className={s.input} name="mensaje" rows={4} placeholder="¿Qué te gustaría saber del club?" required />
-              </div>
-              <button type="submit" className={`${s.submitBtn} ${status==='done'?s.done:''}`} disabled={status==='sending'}>
-                {status === 'idle'    && 'Enviar mensaje →'}
-                {status === 'sending' && 'Enviando...'}
-                {status === 'done'    && 'Mensaje enviado ✓'}
-                {status === 'error'   && 'Error — intenta de nuevo'}
-              </button>
-            </form>
+          {[
+            ['Secciones', [['/', 'Inicio'], ['/mercados', 'Mercados'], ['/research', 'Análisis'], ['/directorio', 'Directorio'], ['/eventos', 'Eventos']]],
+            ['Club',      [['/contacto','Únete al Club'], ['/directorio','Equipo'], ['/eventos','Eventos'], ['/contacto','Newsletter'], ['/contacto','Contacto']]],
+            ['Recursos',  [['#','Glosario Financiero'], ['#','Modelos Excel'], ['#','Casos de Estudio'], ['#','Biblioteca'], ['#','Podcasts']]],
+          ].map(([title, links]) => (
+            <div key={title}>
+              <div className={s.colTitle}>{title}</div>
+              <ul className={s.colLinks}>
+                {links.map(([href, label]) => (
+                  <li key={label}><Link to={href}>{label}</Link></li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className={s.bottom}>
+          <span>© 2026 Finance Club · Todos los derechos reservados</span>
+          <div className={s.social}>
+            {['LinkedIn','Instagram','Twitter / X','Spotify'].map(n => <a key={n} href="#">{n}</a>)}
           </div>
+          <span><Link to="/privacidad">Privacidad · Términos</Link></span>
         </div>
       </div>
-    </main>
+    </footer>
   )
 }
