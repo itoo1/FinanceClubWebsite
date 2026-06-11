@@ -34,7 +34,7 @@ export default function Contacto() {
             <div className={s.infoSection}>
               <div className={s.secTitle}>Información de contacto</div>
               {[
-                ['Email',    'contacto@clubdefinanzas.org'],
+                ['Email',    'financeclubudec@gmail.com'],
                 ['Sesiones', 'Jueves · 17:00 h · Lab. Finanzas'],
                 ['Sede',     'Facultad de Cs. Económicas y Administrativas · Lab. Finanzas · Universidad de Concepción'],
                 ['Redes',    'LinkedIn · Instagram · Newsletter'],

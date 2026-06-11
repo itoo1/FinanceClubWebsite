@@ -8,7 +8,7 @@
 .grid { display:grid;grid-template-columns:1fr 440px;gap:48px;padding:40px 0; }
 
 .left { display:flex;flex-direction:column;gap:32px; }
-.infoSection { }
+
 .secTitle { font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border);font-family:var(--sans); }
 .infoRow { display:grid;grid-template-columns:90px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--border); }
 .infoLabel { font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:var(--sans); }
