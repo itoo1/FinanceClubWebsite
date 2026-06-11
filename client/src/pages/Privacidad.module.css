@@ -5,6 +5,7 @@
   border-bottom: 1px solid var(--border2);
   padding: 40px 24px;
 }
+
 .eyebrow {
   font-size: 10px;
   font-weight: 600;
@@ -14,6 +15,7 @@
   margin-bottom: 6px;
   font-family: var(--sans);
 }
+
 .title {
   font-family: var(--serif);
   font-size: 32px;
@@ -22,6 +24,7 @@
   letter-spacing: -.02em;
   margin-bottom: 8px;
 }
+
 .subtitle {
   font-size: 12px;
   color: var(--muted);
@@ -33,7 +36,8 @@
   max-width: 760px;
   margin: 0 auto;
 }
-.content h2 {
+
+.content :global(h2) {
   font-family: var(--serif);
   font-size: 20px;
   font-weight: 700;
@@ -41,20 +45,24 @@
   margin: 32px 0 12px;
   letter-spacing: -.01em;
 }
-.content h2:first-child { margin-top: 0; }
-.content p {
+
+.content :global(h2:first-child) { margin-top: 0; }
+
+.content :global(p) {
   font-size: 14px;
   color: var(--text-sec);
   line-height: 1.75;
   margin-bottom: 12px;
 }
-.content ul {
+
+.content :global(ul) {
   margin: 8px 0 16px 24px;
   color: var(--text-sec);
   font-size: 14px;
   line-height: 1.7;
 }
-.content li { margin-bottom: 6px; }
+
+.content :global(li) { margin-bottom: 6px; }
 
 .link { color: var(--accent); text-decoration: underline; }
 .link:hover { color: var(--white); }
@@ -64,13 +72,15 @@
   padding-top: 24px;
   border-top: 1px solid var(--border);
 }
-.backLink a {
+
+.backLink :global(a) {
   font-size: 12px;
   color: var(--accent);
   font-family: var(--sans);
   letter-spacing: .04em;
 }
-.backLink a:hover { color: var(--white); }
+
+.backLink :global(a:hover) { color: var(--white); }
 
 @media (max-width: 768px) {
   .header { padding: 28px 16px; }
