@@ -86,7 +86,7 @@ const MEMBERS = [
 
   // ─── Miembros ───
   { id:11, name:'Pilar Herrera',     role:'Miembro', career:'Economía',             year:'2.º', area:'Renta Fija',           avatar:'PH', bio:'Análisis de curvas de rendimiento y spread de crédito corporativo.' },
-  { id:12, name:'Tomás Espinoza',    role:'Miembro', career:'Ingeniería Comercial', year:'2.º', area:'Quant / ML',           avatar:'TE', bio:'Backtesting de estrategias algorítmicas en mercados latinoamericanos.' },
+  { id:12, name:'Tomás Valente',    role:'Miembro', career:'Ingeniería Comercial', year:'2.º', area:'Quant / ML',           avatar:'TE', bio:'Backtesting de estrategias algorítmicas en mercados latinoamericanos.' },
   { id:13, name:'Camila Rojas',      role:'Miembro', career:'Economía',             year:'2.º', area:'ESG',                  avatar:'CR', bio:'Interesada en bonos verdes y finanzas de la transición energética.' },
   { id:14, name:'Felipe Núñez',      role:'Miembro', career:'Ingeniería Comercial', year:'2.º', area:'Renta Variable',       avatar:'FN', bio:'Análisis sectorial y construcción de tesis de inversión en equities.' },
   { id:15, name:'Javiera Soto',      role:'Miembro', career:'Contabilidad',         year:'1.º', area:'M&A / Valoración',     avatar:'JS', bio:'Aprendiendo modelación financiera y técnicas de valoración corporativa.' },
