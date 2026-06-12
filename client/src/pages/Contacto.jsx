@@ -36,7 +36,7 @@ export default function Contacto() {
               {[
                 ['Email',    'financeclubudec@gmail.com'],
                 ['Sesiones', 'Jueves · 17:00 h · Lab. Finanzas'],
-                ['Sede',     'Facultad de Cs. Económicas y Administrativas · Lab. Finanzas · Universidad de Concepción'],
+                ['Sede',     'FACEA · Facultad de Cs. Económicas y Administrativas · Lab. Finanzas · UdeC'],
                 ['Redes',    'LinkedIn · Instagram · Newsletter'],
               ].map(([l,v]) => (
                 <div className={s.infoRow} key={l}>
