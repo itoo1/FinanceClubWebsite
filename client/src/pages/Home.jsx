@@ -86,7 +86,6 @@ export default function Home() {
             </h1>
 
             <p className={s.heroLead}>
-              El club de finanzas de la <strong>FACEA · Universidad de Concepción</strong>.
               Una comunidad de estudiantes dedicada al análisis riguroso de los mercados,
               la economía aplicada y las finanzas cuantitativas. Donde la profesionalidad y la tecnología se encuentran.
             </p>
