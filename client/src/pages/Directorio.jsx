@@ -11,17 +11,59 @@ function roleGroup(role) {
   return 'Miembro'
 }
 
-function MemberCard({ m }) {
+function LinkedInIcon({ size = 14 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+    </svg>
+  )
+}
+
+/* ─── Card grande con foto, solo para Directiva ─── */
+function DirectivoCard({ m }) {
   return (
     <div className={s.card}>
-      <div className={s.avatar}>{m.avatar}</div>
+      <div className={s.photo}>
+        <div className={s.photoBg}>
+          <span className={s.initials}>{m.avatar}</span>
+        </div>
+        {m.linkedin && (
+          <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className={s.linkedinBtn} aria-label={`LinkedIn de ${m.name}`}>
+            <LinkedInIcon />
+          </a>
+        )}
+      </div>
       <div className={s.info}>
         <div className={s.name}>{m.name}</div>
         <div className={s.role}>{m.role}</div>
-        <div className={s.career}>{m.career} · {m.year}</div>
-        <span className={s.areaBadge}>{m.area}</span>
+        <div className={s.meta}>
+          <span className={s.career}>{m.career} · {m.year}</span>
+          <span className={s.areaBadge}>{m.area}</span>
+        </div>
         {m.bio && <p className={s.bio}>{m.bio}</p>}
       </div>
+    </div>
+  )
+}
+
+/* ─── Card compacta para Honorarios y Miembros ─── */
+function MemberRow({ m }) {
+  return (
+    <div className={s.row}>
+      <div className={s.rowAvatar}>{m.avatar}</div>
+      <div className={s.rowInfo}>
+        <div className={s.rowName}>{m.name}</div>
+        <div className={s.rowRole}>{m.role}</div>
+        <div className={s.rowMeta}>
+          <span className={s.career}>{m.career} · {m.year}</span>
+          <span className={s.areaBadge}>{m.area}</span>
+        </div>
+      </div>
+      {m.linkedin && (
+        <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className={s.rowLinkedin} aria-label={`LinkedIn de ${m.name}`}>
+          <LinkedInIcon size={16} />
+        </a>
+      )}
     </div>
   )
 }
@@ -68,11 +110,11 @@ export default function Directorio() {
       <div className="container">
         {loading ? (
           <div className={s.grid}>
-            {Array.from({length:6}).map((_,i) => <div key={i} className={`${s.card} skeleton`} style={{height:140}} />)}
+            {Array.from({length:6}).map((_,i) => <div key={i} className={`${s.card} skeleton`} style={{height:340}} />)}
           </div>
         ) : (
           <>
-            {/* ─── DIRECTIVA ─── */}
+            {/* DIRECTIVA — cards grandes con foto */}
             {fDirectiva.length > 0 && (
               <section className={s.section}>
                 <div className={s.sectionHeader}>
@@ -80,38 +122,37 @@ export default function Directorio() {
                   <span className={s.sectionCount}>{fDirectiva.length} integrantes</span>
                 </div>
                 <div className={s.grid}>
-                  {fDirectiva.map(m => <MemberCard key={m.id} m={m} />)}
+                  {fDirectiva.map(m => <DirectivoCard key={m.id} m={m} />)}
                 </div>
               </section>
             )}
 
-            {/* ─── HONORARIOS ─── */}
+            {/* MIEMBROS HONORARIOS — formato compacto */}
             {fHonorarios.length > 0 && (
               <section className={s.section}>
                 <div className={s.sectionHeader}>
                   <h2 className={s.sectionTitle}>Miembros Honorarios</h2>
                   <span className={s.sectionCount}>{fHonorarios.length} integrantes</span>
                 </div>
-                <div className={s.grid}>
-                  {fHonorarios.map(m => <MemberCard key={m.id} m={m} />)}
+                <div className={s.rowList}>
+                  {fHonorarios.map(m => <MemberRow key={m.id} m={m} />)}
                 </div>
               </section>
             )}
 
-            {/* ─── MIEMBROS ─── */}
+            {/* MIEMBROS — formato compacto */}
             {fMiembros.length > 0 && (
               <section className={s.section}>
                 <div className={s.sectionHeader}>
                   <h2 className={s.sectionTitle}>Miembros</h2>
                   <span className={s.sectionCount}>{fMiembros.length} integrantes</span>
                 </div>
-                <div className={s.grid}>
-                  {fMiembros.map(m => <MemberCard key={m.id} m={m} />)}
+                <div className={s.rowList}>
+                  {fMiembros.map(m => <MemberRow key={m.id} m={m} />)}
                 </div>
               </section>
             )}
 
-            {/* Empty state */}
             {fDirectiva.length === 0 && fHonorarios.length === 0 && fMiembros.length === 0 && (
               <div className={s.empty}>
                 <p>No se encontraron miembros con estos filtros.</p>
