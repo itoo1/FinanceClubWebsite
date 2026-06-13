@@ -3,7 +3,7 @@
 .header {
   background: var(--bg2);
   border-bottom: 2px solid var(--border2);
-  padding: 28px 24px;
+  padding: 64px 48px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -21,7 +21,7 @@
 }
 .title {
   font-family: var(--serif);
-  font-size: 36px;
+  font-size: 52px;
   font-weight: 700;
   color: var(--white);
   letter-spacing: -0.02em;
@@ -140,7 +140,7 @@
 @media (max-width: 768px) {
   .header { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px 16px; }
   .headerRight { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 10px; }
-  .title { font-size: 28px; }
+  .title { font-size: 44px; }
   .table { font-size: 12px; }
   .table th:nth-child(4), .table td:nth-child(4),
   .table th:nth-child(5), .table td:nth-child(5) { display: none; }
@@ -150,4 +150,9 @@
   .table th:nth-child(3), .table td:nth-child(3) { display: none; }
   .symCell { font-size: 12px; }
   .price { font-size: 12px; }
+}
+
+@media (max-width: 768px) {
+  .header { padding: 36px 18px !important; }
+  .title { font-size: 30px !important; }
 }
