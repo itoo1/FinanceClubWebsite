@@ -119,7 +119,6 @@ export default function Directorio() {
               <section className={s.section}>
                 <div className={s.sectionHeader}>
                   <h2 className={s.sectionTitle}>Directiva</h2>
-                  <span className={s.sectionCount}>{fDirectiva.length} integrantes</span>
                 </div>
                 <div className={s.grid}>
                   {fDirectiva.map(m => <DirectivoCard key={m.id} m={m} />)}
@@ -132,7 +131,6 @@ export default function Directorio() {
               <section className={s.section}>
                 <div className={s.sectionHeader}>
                   <h2 className={s.sectionTitle}>Miembros Honorarios</h2>
-                  <span className={s.sectionCount}>{fHonorarios.length} integrantes</span>
                 </div>
                 <div className={s.rowList}>
                   {fHonorarios.map(m => <MemberRow key={m.id} m={m} />)}
@@ -145,7 +143,6 @@ export default function Directorio() {
               <section className={s.section}>
                 <div className={s.sectionHeader}>
                   <h2 className={s.sectionTitle}>Miembros</h2>
-                  <span className={s.sectionCount}>{fMiembros.length} integrantes</span>
                 </div>
                 <div className={s.rowList}>
                   {fMiembros.map(m => <MemberRow key={m.id} m={m} />)}
