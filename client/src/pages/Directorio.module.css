@@ -118,3 +118,39 @@
   .card { padding: 16px 14px; }
   .bio  { display: none; }
 }
+
+/* ─── SECTIONS ─── */
+.section {
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+.section:first-of-type { margin-top: 24px; }
+
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border2);
+}
+
+.sectionTitle {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -.01em;
+}
+
+.sectionCount {
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+
+@media (max-width: 768px) {
+  .sectionTitle { font-size: 18px; }
+}
