@@ -34,7 +34,7 @@ const PARTNERS = [
       </svg>
     ),
     cat:'Banca & Servicios Financieros', name:'Itaú',
-    desc:'Financia el Laboratorio de Finanzas de la facultad y apoya al club con capacitaciones profesionales. Conecta a estudiantes y profesionales con el ecosistema financiero regional.',
+    desc:'Apoya al Laboratorio de Finanzas de la facultad y al club con capacitaciones profesionales. Conecta a estudiantes y profesionales con el ecosistema financiero regional.',
     tag:'Socio fundador',
   },
   { placeholder: true },
