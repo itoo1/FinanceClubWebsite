@@ -88,7 +88,7 @@ export default function Home() {
             <p className={s.heroLead}>
               El club de finanzas de la <strong>Universidad de Concepción</strong>.
               Una comunidad de estudiantes dedicada al análisis riguroso de los mercados,
-              la economía aplicada y las finanzas cuantitativas. Donde la profesionalidad y la tecnología se encuentran.
+              las finanzas cuantitativas y la economía aplicada. Donde la profesionalidad y el rigor analítico se encuentran.
             </p>
 
             <div className={s.heroActions}>
