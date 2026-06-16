@@ -47,8 +47,20 @@ const PARTNERS = [
     desc:'Banco de inversión líder en Latinoamérica. Aporta experiencia en mercados de capitales y formación profesional para los miembros del club.',
     tag:'Socio institucional',
    },
+   {
+    logo: (
+      <svg width="120" height="44" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="32" r="22" fill="none" stroke="#e30613" strokeWidth="3"/>
+        <path d="M40 14 L48 32 L40 28 Z" fill="#e30613"/>
+        <text x="0" y="72" fontFamily="Arial Black, Arial, sans-serif" fontSize="16" fontWeight="900" fill="#e30613" letterSpacing="0.5">BAIN &amp; COMPANY</text>
+      </svg>
+    ),
+    cat:'Consultoría Estratégica', name:'Bain & Company',
+    desc:'Una de las consultoras estratégicas más reconocidas del mundo. Colabora con el club en eventos, formación profesional y acercamiento al ecosistema corporativo global.',
+    tag:'Socio en eventos',
+  },
 
-  { placeholder: true },
+ 
 ]
 
 function Metric({ val, label, delta }) {
