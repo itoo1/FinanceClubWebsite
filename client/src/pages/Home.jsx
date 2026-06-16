@@ -44,7 +44,7 @@ const PARTNERS = [
       </svg>
     ),
     cat:'Banca de Inversión', name:'BTG Pactual',
-    desc:'Banco de inversión líder en Latinoamérica. Aporta experiencia en mercados de capitales yformación profesional para los miembros del club.',
+    desc:'Banco de inversión líder en Latinoamérica. Aporta experiencia en mercados de capitales y formación profesional para los miembros del club.',
     tag:'Socio institucional',
    },
 
