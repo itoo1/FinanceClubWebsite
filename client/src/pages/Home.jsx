@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useEvents } from '../hooks/useData'
-import { useScrollReveal, useCounter } from '../hooks/useEffects'
+import { useScrollReveal, useCounter, useParallax } from '../hooks/useEffects'
 import s from './Home.module.css'
 
 const PILLARS = [
@@ -79,6 +79,9 @@ function Metric({ val, label, delta }) {
 export default function Home() {
   const { events } = useEvents()
   useScrollReveal()
+  const parallax = useParallax(0.4)
+  const fadeStart = typeof window !== 'undefined' ? window.innerHeight * 0.5 : 400
+  const heroOpacity = Math.max(0, 1 - parallax / fadeStart)
 
   return (
     <main className={s.page}>
@@ -87,7 +90,7 @@ export default function Home() {
       <section className={s.hero}>
 
         {/* Video — z-index 0 */}
-        <video autoPlay muted loop playsInline className={s.video}>
+        <video autoPlay muted loop playsInline className={s.video} style={{ transform: `translateY(${parallax * 0.5}px) scale(1.1)` }}>
           <source src="https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4" type="video/mp4" />
           <source src="https://videos.pexels.com/video-files/856973/856973-hd_1920_1080_25fps.mp4" type="video/mp4" />
         </video>
@@ -96,7 +99,7 @@ export default function Home() {
         <div className={s.videoOverlay} />
 
         {/* Content — z-index 2 */}
-        <div className={s.heroBody}>
+        <div className={s.heroBody} style={{ opacity: heroOpacity, transform: `translateY(${parallax * 0.2}px)` }}>
           <div className={s.heroLeft}>
             <div className={s.eyebrow}>
               <span className={s.eyebrowLine} />
@@ -151,6 +154,12 @@ export default function Home() {
             <Metric val="3+"   label="Asesores académicos" delta="↑ Mentores activos" />
           </div>
         </div>
+
+        {/* Scroll indicator */}
+        <button className={s.scrollHint} onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} aria-label="Bajar al contenido">
+          <span className={s.scrollText}>Explorar</span>
+          <span className={s.scrollLine} />
+        </button>
 
       </section>
 

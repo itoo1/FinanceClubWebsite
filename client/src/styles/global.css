@@ -57,13 +57,22 @@ input, textarea { font-family: var(--sans); }
 /* ── SCROLL REVEAL ── */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1),
-              transform 0.9s cubic-bezier(0.16,1,0.3,1);
+  transform: translateY(36px);
+  filter: blur(4px);
+  transition: opacity 1s cubic-bezier(0.16,1,0.3,1),
+              transform 1s cubic-bezier(0.16,1,0.3,1),
+              filter 1s cubic-bezier(0.16,1,0.3,1);
+  will-change: opacity, transform;
 }
-.reveal.revealed { opacity: 1; transform: translateY(0); }
-.d1{transition-delay:.05s}.d2{transition-delay:.13s}.d3{transition-delay:.21s}
-.d4{transition-delay:.29s}.d5{transition-delay:.37s}.d6{transition-delay:.45s}
+.reveal.revealed { opacity: 1; transform: translateY(0); filter: blur(0); }
+.d1{transition-delay:.06s}.d2{transition-delay:.14s}.d3{transition-delay:.22s}
+.d4{transition-delay:.30s}.d5{transition-delay:.38s}.d6{transition-delay:.46s}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
 
 /* ── SKELETON ── */
 @keyframes shimmer {

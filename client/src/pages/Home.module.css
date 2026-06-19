@@ -462,3 +462,61 @@
   .heroLead { font-size: 14px; }
   .metricVal { font-size: 22px; }
 }
+/* ═══════════════════════════════════════════════
+   SCROLL INDICATOR (cinematic hero)
+═══════════════════════════════════════════════ */
+.scrollHint {
+  position: absolute;
+  bottom: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  animation: scrollHintFade 1s ease 1.2s both;
+}
+.scrollText {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s;
+}
+.scrollHint:hover .scrollText { color: #fff; }
+.scrollLine {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  position: relative;
+  overflow: hidden;
+}
+.scrollLine::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 40%;
+  background: var(--accent);
+  animation: scrollLineMove 2s cubic-bezier(0.4,0,0.2,1) infinite;
+}
+@keyframes scrollLineMove {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(350%); }
+}
+@keyframes scrollHintFade {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@media (max-width: 900px) {
+  .scrollHint { bottom: 130px; }
+}
+@media (max-width: 600px) {
+  .scrollHint { display: none; }
+}
