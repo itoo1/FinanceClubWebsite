@@ -19,7 +19,7 @@
 
 .dateBox { width:60px;text-align:center;flex-shrink:0;padding:8px;border:1px solid var(--border);background:var(--bg2); }
 .day   { display:block;font-family:var(--serif);font-size:28px;font-weight:700;color:var(--white);line-height:1; }
-.month { display:block;font-size:10px;font-family:var(--mono);color:var(--text-sec);text-transform:uppercase;letter-spacing:.1em; }
+.month { display:block;font-size:10px;font-family:var(--mono);color:var(--white);text-transform:uppercase;letter-spacing:.1em; }
 
 .evBody { flex:1; }
 .evTop  { display:flex;gap:8px;margin-bottom:6px; }
@@ -68,7 +68,7 @@
 .eventRow:hover { background: var(--surface) !important; }
 .dateBox { background: var(--surface) !important; border-color: var(--border2) !important; }
 .day { color: var(--white) !important; }
-.month { color: var(--muted) !important; }
+.month { color: var(--white) !important; opacity: 0.7; }
 .evTitle { color: var(--white) !important; }
 .evMeta { color: var(--muted) !important; }
 .tab { color: var(--text-sec) !important; border-color: var(--border2) !important; }
