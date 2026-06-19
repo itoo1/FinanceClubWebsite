@@ -93,12 +93,13 @@ const MEMBERS = [
 ];
 
 const EVENTS = [
-  { id:1, day:'05', month:'JUN', name:'Análisis de Resultados Q1 2026',   time:'19:00', location:'Aula Magna',        format:'Presencial', category:'Análisis',    desc:'Revisión de resultados corporativos y ajuste de tesis para el segundo semestre.' , linkedin:'' },
-  { id:2, day:'12', month:'JUN', name:'Taller: Valoración DCF Avanzado',  time:'18:30', location:'Lab. Finanzas',  format:'Presencial', category:'Taller',      desc:'Modelación de flujos de caja descontados con análisis de sensibilidad Monte Carlo.' , linkedin:'' },
-  { id:3, day:'19', month:'JUN', name:'Mesa Redonda: Fintech 2026',       time:'19:00', location:'Sala Conferencias', format:'Híbrido',    category:'Conferencia', desc:'Debate sobre IA en gestión de activos y el futuro de la banca digital en Chile.' , linkedin:'' },
-  { id:4, day:'24', month:'JUN', name:'Conferencia Anual Finance Club',time:'09:00', location:'Hotel W Santiago', format:'Presencial', category:'Conferencia', desc:'Evento insignia del club. Ponentes de la industria, paneles y networking.' , linkedin:'' },
-  { id:5, day:'08', month:'JUL', name:'Workshop: Riesgo Crediticio',      time:'19:00', location:'Online · Zoom',     format:'Online',     category:'Taller',      desc:'Análisis de ratings soberanos y corporativos. Acceso libre para miembros.' , linkedin:'' },
-  { id:6, day:'17', month:'JUL', name:'Simulación de Cartera — Final',    time:'17:00', location:'Híbrido',           format:'Híbrido',    category:'Competición', desc:'Ronda final de la competición semestral. Presentación ante jurado externo.' , linkedin:'' },
+  { id:1, day:'05', month:'JUN', name:'Análisis de Resultados Q1 2026',   time:'19:00', location:'Aula Magna',        format:'Presencial', category:'Análisis',    desc:'Revisión de resultados corporativos y ajuste de tesis para el segundo semestre.', image:'' },
+  { id:2, day:'12', month:'JUN', name:'Taller: Valoración DCF Avanzado',  time:'18:30', location:'Lab. Finanzas',  format:'Presencial', category:'Taller',      desc:'Modelación de flujos de caja descontados con análisis de sensibilidad Monte Carlo.', image:'' },
+  { id:3, day:'19', month:'JUN', name:'Mesa Redonda: Fintech 2026',       time:'19:00', location:'Sala Conferencias', format:'Híbrido',    category:'Conferencia', desc:'Debate sobre IA en gestión de activos y el futuro de la banca digital en Chile.', image:'' },
+  { id:4, day:'24', month:'JUN', name:'Conferencia Anual Finance Club',time:'09:00', location:'Hotel W Santiago', format:'Presencial', category:'Conferencia', desc:'Evento insignia del club. Ponentes de la industria, paneles y networking.', image:'' },
+  { id:5, day:'08', month:'JUL', name:'Workshop: Riesgo Crediticio',      time:'19:00', location:'Online · Zoom',     format:'Online',     category:'Taller',      desc:'Análisis de ratings soberanos y corporativos. Acceso libre para miembros.', image:'' },
+  { id:6, day:'17', month:'JUL', name:'Simulación de Cartera — Final',    time:'17:00', location:'Híbrido',           format:'Híbrido',    category:'Competición', desc:'Ronda final de la competición semestral. Presentación ante jurado externo.', image:'' },
+  { id:7, day:'12', month:'AGO', name:'Get to Know Santiago',             time:'19:30', location:'Santiago',          format:'Presencial', category:'Conferencia', desc:'Evento organizado por Bain & Company. Instancia de networking y acercamiento a la industria de consultoría estratégica.', image:'' },
 ];
 
 const RESEARCH = [
