@@ -30,6 +30,7 @@ html { font-size: 16px; scroll-behavior: smooth; }
   /* Typography */
   --serif:  'Playfair Display', Georgia, serif;
   --sans:   'IBM Plex Sans', sans-serif;
+  --display: 'Manrope', 'IBM Plex Sans', sans-serif;
   --mono:   'IBM Plex Mono', monospace;
 }
 

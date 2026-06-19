@@ -68,11 +68,11 @@
 .eyebrowLine { display: block; width: 40px; height: 1px; background: rgba(255,255,255,0.35); flex-shrink: 0; }
 
 .heroTitle {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: clamp(56px, 7.5vw, 116px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.92;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   color: #ffffff;
   margin-bottom: 28px;
   animation: heroFade 0.8s ease 0.2s both;
