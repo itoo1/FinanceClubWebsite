@@ -105,7 +105,7 @@ export default function Home() {
 
             <h1 className={s.heroTitle}>
               Finance<br />
-              <span className={s.accentWord}>Club</span> <span className={s.udec}>UdeC</span>
+              <span className={s.accentWord}>Club <span className={s.udec}>UdeC</span></span>
             </h1>
 
             <p className={s.heroLead}>
@@ -183,37 +183,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── ACTIVITIES ── */}
-      <section className={`${s.section} ${s.sectionAlt}`}>
-        <div className="container">
-          <div className={`${s.sectionHeader} reveal`}>
-            <div>
-              <div className={s.sectionLabel}>Actividades</div>
-              <h2 className={s.sectionTitle}>Semestre<br /><em>en curso</em></h2>
-            </div>
-            <Link to="/eventos" className={s.sectionMore}>Ver calendario →</Link>
-          </div>
-          <div className={`reveal`}>
-            <table className={s.table}>
-              <thead>
-                <tr><th>Actividad</th><th>Frecuencia</th><th>Formato</th><th>Estado</th></tr>
-              </thead>
-              <tbody>
-                {ACTIVITIES.map(([act,freq,fmt,status]) => (
-                  <tr key={act} className={s.tableRow}>
-                    <td><strong>{act}</strong></td>
-                    <td>{freq}</td><td>{fmt}</td>
-                    <td><span className={`${s.badge} ${status==='Activo'?s.badgeGreen:s.badgeBlue}`}>{status}</span></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       {/* ── PARTNERS ── */}
-      <section className={s.section}>
+      <section className={`${s.section} ${s.sectionAlt}`}>
         <div className="container">
           <div className={`${s.sectionHeader} reveal`}>
             <div>
@@ -244,6 +215,35 @@ export default function Home() {
                 <div className={s.partnerHoverLine} />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ACTIVITIES ── */}
+      <section className={s.section}>
+        <div className="container">
+          <div className={`${s.sectionHeader} reveal`}>
+            <div>
+              <div className={s.sectionLabel}>Actividades</div>
+              <h2 className={s.sectionTitle}>Semestre<br /><em>en curso</em></h2>
+            </div>
+            <Link to="/eventos" className={s.sectionMore}>Ver calendario →</Link>
+          </div>
+          <div className={`reveal`}>
+            <table className={s.table}>
+              <thead>
+                <tr><th>Actividad</th><th>Frecuencia</th><th>Formato</th><th>Estado</th></tr>
+              </thead>
+              <tbody>
+                {ACTIVITIES.map(([act,freq,fmt,status]) => (
+                  <tr key={act} className={s.tableRow}>
+                    <td><strong>{act}</strong></td>
+                    <td>{freq}</td><td>{fmt}</td>
+                    <td><span className={`${s.badge} ${status==='Activo'?s.badgeGreen:s.badgeBlue}`}>{status}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
