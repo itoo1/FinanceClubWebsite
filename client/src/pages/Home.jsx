@@ -105,7 +105,7 @@ export default function Home() {
 
             <h1 className={s.heroTitle}>
               Finance<br />
-              <span className={s.accentWord}>Club</span>
+              <span className={s.accentWord}>Club</span> <span className={s.udec}>UdeC</span>
             </h1>
 
             <p className={s.heroLead}>
