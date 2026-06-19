@@ -1,7 +1,7 @@
 .bar {
   background: var(--black);
   border-bottom: 1px solid var(--border);
-  padding: 6px 24px;
+  padding: 6px 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,6 +17,8 @@
 .clock { color: var(--accent); }
 @media (max-width: 768px) { .right { display: none; } .left span:last-child { display: none; } }
 
+@media (max-width: 1400px) { .bar { padding: 6px 48px; } }
+@media (max-width: 1100px) { .bar { padding: 6px 32px; } }
 @media (max-width: 1024px) { .right { display: none; } }
 @media (max-width: 600px) {
   .bar { padding: 5px 14px; font-size: 10px; }

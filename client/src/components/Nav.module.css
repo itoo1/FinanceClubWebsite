@@ -1,7 +1,7 @@
 .nav {
   background: rgba(13, 21, 38, 0.95);
   border-bottom: 1px solid var(--border);
-  padding: 0 48px;
+  padding: 0 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -95,6 +95,9 @@
   .logo { font-size: 16px; }
 }
 
+@media (max-width: 1400px) {
+  .nav { padding: 0 48px; }
+}
 @media (max-width: 1100px) {
   .nav { padding: 0 32px; }
 }
