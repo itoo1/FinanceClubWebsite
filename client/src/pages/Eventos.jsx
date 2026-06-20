@@ -1,5 +1,6 @@
 import { useHeaderOffset } from '../hooks/useHeaderHeight'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useEvents, useIndustryEvents } from '../hooks/useData'
 import s from './Eventos.module.css'
 
@@ -46,6 +47,9 @@ function IndustryCard({ ev }) {
           <span>{ev.day} {ev.month} · {ev.time}</span>
           <span>{ev.location}</span>
         </div>
+        <Link to="/contacto" className={s.industryContactBtn}>
+          ¿Interesado en asistir? Contáctanos →
+        </Link>
       </div>
     </div>
   )
@@ -106,7 +110,7 @@ export default function Eventos() {
             <div className={s.industryHeader}>
               <div className={s.eyebrow}>Recomendados</div>
               <h2 className={s.industrySectionTitle}>Eventos de la Industria</h2>
-              <p className={s.industrySubtitle}>Conferencias y charlas organizadas por instituciones externas. No son actividades oficiales del club.</p>
+              <p className={s.industrySubtitle}>Conferencias y charlas organizadas por instituciones externas. No son actividades oficiales del club — si te interesa asistir, contáctanos y te ayudamos a coordinar tu participación.</p>
             </div>
             <div className={s.industryGrid}>
               {industryEvents.map(ev => <IndustryCard key={ev.id} ev={ev} />)}
