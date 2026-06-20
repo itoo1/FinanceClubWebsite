@@ -32,6 +32,7 @@ function useSimple(path) {
 
 export function useMembers()  { const { items, loading } = useSimple('/api/members');  return { members: items, loading } }
 export function useEvents()   { const { items, loading } = useSimple('/api/events');   return { events: items, loading } }
+export function useIndustryEvents() { const { items, loading } = useSimple('/api/industry-events'); return { industryEvents: items, loading } }
 export function useResearch() { const { items, loading } = useSimple('/api/research'); return { reports: items, loading } }
 export function useNews()     { const { items, loading } = useSimple('/api/news');     return { news: items, loading } }
 

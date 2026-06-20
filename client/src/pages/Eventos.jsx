@@ -1,6 +1,6 @@
 import { useHeaderOffset } from '../hooks/useHeaderHeight'
 import React, { useState } from 'react'
-import { useEvents } from '../hooks/useData'
+import { useEvents, useIndustryEvents } from '../hooks/useData'
 import s from './Eventos.module.css'
 
 const CATS = ['Todos','Análisis','Taller','Conferencia','Competición']
@@ -10,6 +10,11 @@ function Modal({ ev, onClose }) {
     <div className={s.overlay} onClick={onClose}>
       <div className={s.modal} onClick={e => e.stopPropagation()}>
         <button className={s.close} onClick={onClose}>×</button>
+        {ev.image && (
+          <div className={s.modalImage}>
+            <img src={ev.image} alt={ev.name} />
+          </div>
+        )}
         <div className={`${s.modalCat} ${s[`cat${ev.category}`]}`}>{ev.category}</div>
         <h2 className={s.modalTitle}>{ev.name}</h2>
         <p className={s.modalDesc}>{ev.desc}</p>
@@ -27,9 +32,29 @@ function Modal({ ev, onClose }) {
   )
 }
 
+function IndustryCard({ ev }) {
+  return (
+    <div className={s.industryCard}>
+      <div className={s.industryImageWrap}>
+        <img src={ev.image} alt={ev.name} className={s.industryImage} />
+      </div>
+      <div className={s.industryBody}>
+        <div className={s.industryOrganizer}>{ev.organizer}</div>
+        <h3 className={s.industryTitle}>{ev.name}</h3>
+        <p className={s.industryDesc}>{ev.desc}</p>
+        <div className={s.industryMeta}>
+          <span>{ev.day} {ev.month} · {ev.time}</span>
+          <span>{ev.location}</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Eventos() {
   const headerOffset = useHeaderOffset()
   const { events, loading } = useEvents()
+  const { industryEvents } = useIndustryEvents()
   const [cat, setCat]       = useState('Todos')
   const [selected, setSelected] = useState(null)
 
@@ -74,6 +99,22 @@ export default function Eventos() {
           ))}
         </div>
       </div>
+
+      {industryEvents && industryEvents.length > 0 && (
+        <div className={s.industrySection}>
+          <div className="container">
+            <div className={s.industryHeader}>
+              <div className={s.eyebrow}>Recomendados</div>
+              <h2 className={s.industrySectionTitle}>Eventos de la Industria</h2>
+              <p className={s.industrySubtitle}>Conferencias y charlas organizadas por instituciones externas. No son actividades oficiales del club.</p>
+            </div>
+            <div className={s.industryGrid}>
+              {industryEvents.map(ev => <IndustryCard key={ev.id} ev={ev} />)}
+            </div>
+          </div>
+        </div>
+      )}
+
       {selected && <Modal ev={selected} onClose={() => setSelected(null)} />}
     </main>
   )
