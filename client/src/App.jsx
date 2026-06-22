@@ -10,6 +10,14 @@ import Research   from './pages/Research'
 import Contacto   from './pages/Contacto'
 import Privacidad from './pages/Privacidad'
 
+function ScrollToTop() {
+  const location = useLocation()
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+  return null
+}
+
 function PageWrapper({ children }) {
   const [visible, setVisible] = React.useState(false)
   React.useEffect(() => {
@@ -45,6 +53,7 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <AnimatedRoutes />
       <Footer />
