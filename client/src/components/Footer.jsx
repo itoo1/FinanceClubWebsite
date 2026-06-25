@@ -29,7 +29,7 @@ export default function Footer() {
         <div className={s.bottom}>
           <span>© 2026 Finance Club · Todos los derechos reservados</span>
           <div className={s.social}>
-            {['LinkedIn','Instagram','Twitter / X','Spotify'].map(n => <a key={n} href="#">{n}</a>)}
+            {['LinkedIn','Instagram'].map(n => <a key={n} href="#">{n}</a>)}
           </div>
           <Link to="/privacidad">Privacidad · Términos</Link>
         </div>
