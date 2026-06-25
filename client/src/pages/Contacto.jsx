@@ -59,8 +59,8 @@ export default function Contacto() {
             <div className={s.formTitle}>Formulario de contacto</div>
             <form onSubmit={handleSubmit} className={s.form}>
               {[
-                ['nombre','Nombre completo','text','Ej. María García',true],
-                ['email','Correo electrónico','email','nombre@universidad.edu',true],
+                ['nombre','Nombre completo','text','Ej. María Fernanda García López',true],
+                ['email','Correo electrónico','email','usuario@udec.cl',true],
                 ['carrera','Carrera / Año','text','Ej. Ingeniería Comercial, 3.º',false],
               ].map(([name,label,type,ph,req]) => (
                 <div className={s.field} key={name}>
