@@ -56,7 +56,7 @@ export default function Contacto() {
           </div>
 
           <div className={s.formBox}>
-            <div className={s.formTitle}>Formulario de contacto</div>
+            <div className={s.formTitle}>Formulario de inscripción</div>
             <form onSubmit={handleSubmit} className={s.form}>
               {[
                 ['nombre','Nombre completo','text','Ej. María Fernanda García López',true],
@@ -70,7 +70,7 @@ export default function Contacto() {
               ))}
               <div className={s.field}>
                 <label className={s.label}>Mensaje</label>
-                <textarea className={s.input} name="mensaje" rows={4} placeholder="¿Qué te gustaría saber del club?" required />
+                <textarea className={s.input} name="mensaje" rows={4} placeholder="¿Por qué te gustaría unirte al club?" required />
               </div>
               <button type="submit" className={`${s.submitBtn} ${status==='done'?s.done:''}`} disabled={status==='sending'}>
                 {status === 'idle'    && 'Enviar mensaje →'}
