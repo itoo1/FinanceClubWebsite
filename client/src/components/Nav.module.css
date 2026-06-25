@@ -35,10 +35,10 @@
 }
 .logo:hover { opacity: 0.75; }
 .logoIcon {
-  height: 34px;
-  max-height: 34px;
+  height: 42px;
+  max-height: 42px;
   width: auto;
-  max-width: 38px;
+  max-width: 46px;
   display: block;
   flex-shrink: 0;
   object-fit: contain;
@@ -104,12 +104,12 @@
 @media (max-width: 600px) {
   .nav { padding: 0 16px; height: 60px; }
   .logo { font-size: 18px; gap: 8px; }
-  .logoIcon { height: 26px; }
+  .logoIcon { height: 30px; max-height: 30px; max-width: 34px; }
   .btnJoin { padding: 6px 12px; font-size: 10px; }
 }
 @media (max-width: 360px) {
   .logo { font-size: 16px; }
-  .logoIcon { height: 22px; }
+  .logoIcon { height: 26px; max-height: 26px; max-width: 30px; }
 }
 
 @media (max-width: 1400px) {
