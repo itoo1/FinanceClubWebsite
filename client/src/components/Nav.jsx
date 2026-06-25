@@ -17,7 +17,8 @@ export default function Nav({ scrolled = false }) {
   return (
     <nav className={`${s.nav} ${scrolled ? s.scrolled : ''}`}>
       <Link to="/" className={s.logo}>
-        Finance <span>Club</span>
+        <img src="/images/logo-fc.png" alt="Finance Club" className={s.logoIcon} />
+        <span className={s.logoText}>Finance <span>Club</span></span>
       </Link>
 
       <ul className={`${s.links} ${open ? s.open : ''}`}>
