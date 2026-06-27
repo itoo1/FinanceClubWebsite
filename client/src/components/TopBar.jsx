@@ -11,7 +11,7 @@ export default function TopBar() {
     <div className={s.bar}>
       <div className={s.left}>
         <span>{dateStr}</span>
-        <span>Santiago, Chile · UTC-3</span>
+        <span>Concepción, Chile · UTC-3</span>
         <span className={s.clock}>{time}</span>
       </div>
       <div className={s.right}>
