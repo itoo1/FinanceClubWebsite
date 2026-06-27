@@ -83,6 +83,15 @@ export default function Home() {
   const fadeStart = typeof window !== 'undefined' ? window.innerHeight * 0.5 : 400
   const heroOpacity = Math.max(0, 1 - parallax / fadeStart)
 
+  // Sort events chronologically by month then day
+  const MONTH_ORDER = { ENE:1, FEB:2, MAR:3, ABR:4, MAY:5, JUN:6, JUL:7, AGO:8, SEP:9, OCT:10, NOV:11, DIC:12 }
+  const sortedEvents = [...events].sort((a, b) => {
+    const ma = MONTH_ORDER[a.month] || 99
+    const mb = MONTH_ORDER[b.month] || 99
+    if (ma !== mb) return ma - mb
+    return parseInt(a.day) - parseInt(b.day)
+  })
+
   return (
     <main className={s.page}>
 
@@ -129,7 +138,7 @@ export default function Home() {
 
           <div className={s.heroRight}>
             <div className={s.sideTitle}>Próximos eventos</div>
-            {events.slice(0,4).map(ev => (
+            {sortedEvents.slice(0,4).map(ev => (
               <div className={s.evItem} key={ev.id}>
                 <div className={s.evDate}>
                   <span className={s.evDay}>{ev.day}</span>
