@@ -71,6 +71,16 @@ export default function Eventos() {
         <h1 className={s.title}>Eventos & Actividades</h1>
         <p className={s.subtitle}>Sesiones semanales, talleres y conferencias. Acceso libre para todos los miembros.</p>
       </div>
+
+      <div className="container">
+        <div className={s.inscriptionBanner}>
+          <span className={s.inscriptionDot} />
+          <span className={s.inscriptionText}>
+            <strong>Período de inscripciones:</strong> del 25 de junio al 6 de julio
+          </span>
+        </div>
+      </div>
+
       <div className={s.filters} style={{ top: headerOffset }}>
         {CATS.map(c => <button key={c} className={`${s.tab} ${cat===c?s.tabActive:''}`} onClick={()=>setCat(c)}>{c}</button>)}
       </div>
