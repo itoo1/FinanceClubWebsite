@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useEvents, useIndustryEvents } from '../hooks/useData'
 import s from './Eventos.module.css'
 
-const CATS = ['Todos','Análisis','Taller','Conferencia','Competición']
+const CATS = ['Todos','Inscripción','Análisis','Taller','Conferencia','Competición']
 
 function Modal({ ev, onClose }) {
   return (
@@ -62,7 +62,16 @@ export default function Eventos() {
   const [cat, setCat]       = useState('Todos')
   const [selected, setSelected] = useState(null)
 
-  const filtered = cat === 'Todos' ? events : events.filter(e => e.category === cat)
+  // Sort events chronologically by month then day
+  const MONTH_ORDER = { ENE:1, FEB:2, MAR:3, ABR:4, MAY:5, JUN:6, JUL:7, AGO:8, SEP:9, OCT:10, NOV:11, DIC:12 }
+  const sortedEvents = [...events].sort((a, b) => {
+    const ma = MONTH_ORDER[a.month] || 99
+    const mb = MONTH_ORDER[b.month] || 99
+    if (ma !== mb) return ma - mb
+    return parseInt(a.day) - parseInt(b.day)
+  })
+
+  const filtered = cat === 'Todos' ? sortedEvents : sortedEvents.filter(e => e.category === cat)
 
   return (
     <main className={s.page}>
@@ -70,15 +79,6 @@ export default function Eventos() {
         <div className={s.eyebrow}>Calendario</div>
         <h1 className={s.title}>Eventos & Actividades</h1>
         <p className={s.subtitle}>Sesiones semanales, talleres y conferencias. Acceso libre para todos los miembros.</p>
-      </div>
-
-      <div className="container">
-        <div className={s.inscriptionBanner}>
-          <span className={s.inscriptionDot} />
-          <span className={s.inscriptionText}>
-            <strong>Período de inscripciones:</strong> del 25 de junio al 6 de julio
-          </span>
-        </div>
       </div>
 
       <div className={s.filters} style={{ top: headerOffset }}>
