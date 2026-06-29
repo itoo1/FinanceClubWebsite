@@ -47,9 +47,15 @@ function IndustryCard({ ev }) {
           <span>{ev.day} {ev.month} · {ev.time}</span>
           <span>{ev.location}</span>
         </div>
-        <Link to="/contacto" className={s.industryContactBtn}>
-          ¿Interesado en asistir? Contáctanos →
-        </Link>
+        {ev.link ? (
+          <a href={ev.link} target="_blank" rel="noopener noreferrer" className={s.industryContactBtn}>
+            Inscribirme directamente →
+          </a>
+        ) : (
+          <Link to="/contacto" className={s.industryContactBtn}>
+            ¿Interesado en asistir? Contáctanos →
+          </Link>
+        )}
       </div>
     </div>
   )

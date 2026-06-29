@@ -118,6 +118,30 @@ const INDUSTRY_EVENTS = [
     image: '/images/industria/fitch-on-chile.webp',
     link: '',
   },
+  {
+    id: 102,
+    day: 'TBD', month: '2026',
+    name: 'EY-Parthenon NextGen Women 2026',
+    organizer: 'EY-Parthenon',
+    time: 'Inscripciones abiertas',
+    location: 'EY-Parthenon',
+    format: 'Programa',
+    desc: 'Programa de desarrollo profesional para mujeres jóvenes interesadas en consultoría estratégica. Inscripciones abiertas.',
+    image: '/images/industria/ey-parthenon-nextgen.webp',
+    link: 'https://globaleysurvey.ey.com/jfe/form/SV_cMIknWioYM4YaW2',
+  },
+  {
+    id: 103,
+    day: '08', month: 'JUL',
+    name: 'U.S. Market Insights con Liz Ann Sonders',
+    organizer: 'Charles Schwab',
+    time: '9:00 AM ET',
+    location: 'Online',
+    format: 'Online',
+    desc: 'La experta en mercados estadounidenses Liz Ann Sonders entrega un análisis actualizado del panorama económico y de inversión en EE.UU. Presentación seguida de sesión Q&A.',
+    image: '/images/industria/schwab-us-market.webp',
+    link: '',
+  },
 ];
 
 const RESEARCH = [
