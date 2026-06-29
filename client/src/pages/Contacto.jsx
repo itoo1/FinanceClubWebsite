@@ -37,13 +37,20 @@ export default function Contacto() {
                 ['Email',    'financeclubudec@gmail.com'],
                 ['Sesiones', 'Jueves · 17:00 h · Lab. Finanzas'],
                 ['Sede',     'FACEA · Facultad de Cs. Económicas y Administrativas · Lab. Finanzas · UdeC'],
-                ['Redes',    'LinkedIn · Instagram · Newsletter'],
               ].map(([l,v]) => (
                 <div className={s.infoRow} key={l}>
                   <span className={s.infoLabel}>{l}</span>
                   <span className={s.infoVal}>{v}</span>
                 </div>
               ))}
+              <div className={s.infoRow}>
+                <span className={s.infoLabel}>Redes</span>
+                <span className={s.infoVal}>
+                  <a href="https://www.linkedin.com/in/finance-club-udec-9b4b1a415/" target="_blank" rel="noopener noreferrer" className={s.socialLink}>LinkedIn</a>
+                  {' · '}
+                  <a href="https://www.instagram.com/fcudec/" target="_blank" rel="noopener noreferrer" className={s.socialLink}>Instagram</a>
+                </span>
+              </div>
             </div>
             <div className={s.infoSection}>
               <div className={s.secTitle}>¿Por qué unirte?</div>
