@@ -129,7 +129,12 @@ export default function Eventos() {
               <p className={s.industrySubtitle}>Conferencias y charlas organizadas por instituciones externas. No son actividades oficiales del club — si te interesa asistir, contáctanos y te ayudamos a coordinar tu participación.</p>
             </div>
             <div className={s.industryGrid}>
-              {industryEvents.map(ev => <IndustryCard key={ev.id} ev={ev} />)}
+              {[...industryEvents].sort((a, b) => {
+                const ma = MONTH_ORDER[a.month] || 99
+                const mb = MONTH_ORDER[b.month] || 99
+                if (ma !== mb) return ma - mb
+                return parseInt(a.day) - parseInt(b.day)
+              }).map(ev => <IndustryCard key={ev.id} ev={ev} />)}
             </div>
           </div>
         </div>
