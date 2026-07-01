@@ -29,7 +29,7 @@ export default function Footer() {
         <div className={s.bottom}>
           <span>© 2026 Finance Club · Todos los derechos reservados</span>
           <div className={s.social}>
-            <a href="https://www.linkedin.com/in/finance-club-udec-9b4b1a415/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.linkedin.com/company/finance-club-udec/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://www.instagram.com/fcudec/" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
           <Link to="/privacidad">Privacidad · Términos</Link>

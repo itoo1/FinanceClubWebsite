@@ -46,7 +46,7 @@ export default function Contacto() {
               <div className={s.infoRow}>
                 <span className={s.infoLabel}>Redes</span>
                 <span className={s.infoVal}>
-                  <a href="https://www.linkedin.com/in/finance-club-udec-9b4b1a415/" target="_blank" rel="noopener noreferrer" className={s.socialLink}>LinkedIn</a>
+                  <a href="https://www.linkedin.com/company/finance-club-udec/" target="_blank" rel="noopener noreferrer" className={s.socialLink}>LinkedIn</a>
                   {' · '}
                   <a href="https://www.instagram.com/fcudec/" target="_blank" rel="noopener noreferrer" className={s.socialLink}>Instagram</a>
                 </span>
