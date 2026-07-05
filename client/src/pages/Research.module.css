@@ -1,11 +1,11 @@
 .page { min-height: calc(100vh - 120px); }
 .header { background:var(--bg2);border-bottom:2px solid var(--border);padding:64px 48px; }
-.eyebrow { font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-family:var(--sans); }
+.eyebrow { font-size: 11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-family:var(--sans); }
 .title { font-family:var(--serif);font-size: 52px;font-weight:700;color:var(--white);letter-spacing:-.02em;margin-bottom:8px; }
 .subtitle { font-size:13px;color:var(--text-sec);max-width:560px; }
 
 .filters { background:var(--bg);border-bottom:1px solid var(--border);padding:14px 24px;display:flex;gap:8px;flex-wrap:wrap;position:sticky;z-index:10; }
-.tab { font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;background:transparent;border:1px solid var(--border);color:var(--text-sec);cursor:pointer;transition:all .15s;font-family:var(--sans); }
+.tab { font-size: 11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;background:transparent;border:1px solid var(--border);color:var(--text-sec);cursor:pointer;transition:all .15s;font-family:var(--sans); }
 .tab:hover { border-color:var(--muted);color:var(--white); }
 .tabActive { background:var(--accent);border-color:var(--accent);color:#fff; }
 
@@ -16,7 +16,7 @@
 }
 .reportCard:hover { background:var(--bg2);border-left-color:var(--accent); }
 
-.areaBadge { font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;display:inline-block;padding:3px 10px;margin-bottom:12px;font-family:var(--sans); }
+.areaBadge { font-size: 11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;display:inline-block;padding:3px 10px;margin-bottom:12px;font-family:var(--sans); }
 .areaMacro      { background:#e8eef4;color:#1a4a7a; }
 .areaEquities   { background:#e8f4ee;color:var(--green); }
 .areaRentaFija  { background:#fdf5e6;color:var(--gold); }

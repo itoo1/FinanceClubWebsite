@@ -1,11 +1,11 @@
 .page { min-height: calc(100vh - 120px); }
 .header { background:var(--bg2);border-bottom:2px solid var(--border);padding:64px 48px; }
-.eyebrow { font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-family:var(--sans); }
+.eyebrow { font-size: 11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-family:var(--sans); }
 .title { font-family:var(--serif);font-size: 52px;font-weight:700;color:var(--white);letter-spacing:-.02em;margin-bottom:8px; }
 .subtitle { font-size:13px;color:var(--text-sec); }
 
 .filters { background:var(--bg);border-bottom:1px solid var(--border);padding:14px 24px;display:flex;gap:8px;flex-wrap:wrap;position:sticky;z-index:10; }
-.tab { font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;background:transparent;border:1px solid var(--border);color:var(--text-sec);cursor:pointer;transition:all .15s;font-family:var(--sans); }
+.tab { font-size: 11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;background:transparent;border:1px solid var(--border);color:var(--text-sec);cursor:pointer;transition:all .15s;font-family:var(--sans); }
 .tab:hover { border-color:var(--muted);color:var(--white); }
 .tabActive { background:var(--accent);border-color:var(--accent);color:#fff; }
 
@@ -19,19 +19,19 @@
 
 .dateBox { width:60px;text-align:center;flex-shrink:0;padding:8px;border:1px solid var(--border);background:var(--bg2); }
 .day   { display:block;font-family:var(--serif);font-size:28px;font-weight:700;color:var(--white);line-height:1; }
-.month { display:block;font-size:10px;font-family:var(--mono);color:var(--white);text-transform:uppercase;letter-spacing:.1em; }
+.month { display:block;font-size: 11px;font-family:var(--mono);color:var(--white);text-transform:uppercase;letter-spacing:.1em; }
 
 .evBody { flex:1; }
 .evTop  { display:flex;gap:8px;margin-bottom:6px; }
 
-.catTag { font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;font-family:var(--sans); }
+.catTag { font-size: 11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;font-family:var(--sans); }
 .catInscripción { background:#e8eefc;color:var(--accent); }
 .catAnálisis    { background:#ffe8e8;color:var(--accent); }
 .catTaller      { background:#fff8e8;color:var(--gold); }
 .catConferencia { background:#e8f4ee;color:var(--green); }
 .catCompetición { background:#ffe8e8;color:var(--red); }
 
-.fmtTag { font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;background:var(--surface);color:var(--text-sec);font-family:var(--sans); }
+.fmtTag { font-size: 11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;background:var(--surface);color:var(--text-sec);font-family:var(--sans); }
 
 .evTitle { font-family:var(--sans);font-size:16px;font-weight:600;color:var(--white);margin-bottom:4px; }
 .evMeta  { font-family:var(--mono);font-size:11px;color:var(--muted); }
@@ -70,12 +70,12 @@
 }
 .close { position:absolute;top:12px;right:12px;background:rgba(13,21,38,0.6);border:none;font-size:24px;color:#fff;cursor:pointer;padding:8px;transition:color .2s;z-index:2;line-height:1; }
 .close:hover { color:var(--white); }
-.modalCat { font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:28px;margin-bottom:12px;display:inline-block;padding:3px 10px;font-family:var(--sans); }
+.modalCat { font-size: 11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:28px;margin-bottom:12px;display:inline-block;padding:3px 10px;font-family:var(--sans); }
 .modalTitle { font-family:var(--serif);font-size:26px;font-weight:700;color:var(--white);margin-bottom:16px;line-height:1.2; }
 .modalDesc { font-size:14px;color:var(--text-sec);line-height:1.7;margin-bottom:24px; }
 .modalMeta { border-top:1px solid var(--border);margin-bottom:24px; }
 .metaRow { display:grid;grid-template-columns:80px 1fr;padding:10px 0;border-bottom:1px solid var(--border); }
-.metaLabel { font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:var(--sans); }
+.metaLabel { font-size: 11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:var(--sans); }
 .metaVal { font-size:13px;color:var(--text);font-family:var(--sans); }
 .registerBtn { width:calc(100% - 80px);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--accent);border:none;padding:14px;cursor:pointer;transition:opacity .2s;font-family:var(--sans); }
 .registerBtn:hover { opacity:.85; }
@@ -164,8 +164,8 @@
   transition: transform .3s cubic-bezier(0.16,1,0.3,1), box-shadow .3s ease, border-color .3s ease;
 }
 .industryCard:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.45);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
   border-color: var(--accent);
 }
 
@@ -183,13 +183,13 @@
   transition: transform .5s ease;
 }
 .industryCard:hover .industryImage {
-  transform: scale(1.04);
+  transform: scale(1.025);
 }
 
 .industryBody { padding: 28px 28px 32px; }
 
 .industryOrganizer {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;

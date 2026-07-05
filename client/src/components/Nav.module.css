@@ -9,7 +9,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: background var(--tr-med), box-shadow var(--tr-med), height var(--tr-med);
 }
 .scrolled {
   background: rgba(11, 17, 32, 0.98);
@@ -17,6 +17,7 @@
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 4px 24px rgba(0,0,0,0.4);
   border-bottom-color: var(--border2);
+  height: 64px;
 }
 .logo {
   display: flex;
@@ -92,7 +93,7 @@
 .hamburger span.hOpen:nth-child(2) { opacity: 0; }
 .hamburger span.hOpen:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 @media (max-width: 900px) {
-  .links { display: none; position: absolute; top: 76px; left: 0; right: 0; background: rgba(13,21,38,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); flex-direction: column; height: auto; padding: 8px 0; z-index: 99; }
+  .links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(13,21,38,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); flex-direction: column; height: auto; padding: 8px 0; z-index: 99; }
   .links.open { display: flex; }
   .link { height: 44px; padding: 0 48px; }
   .linkUnderline { display: none; }
@@ -105,7 +106,7 @@
   .nav { padding: 0 16px; height: 60px; }
   .logo { font-size: 18px; gap: 8px; }
   .logoIcon { height: 30px; max-height: 30px; max-width: 34px; }
-  .btnJoin { padding: 6px 12px; font-size: 10px; }
+  .btnJoin { padding: 6px 12px; font-size: 11px; }
 }
 @media (max-width: 360px) {
   .logo { font-size: 16px; }

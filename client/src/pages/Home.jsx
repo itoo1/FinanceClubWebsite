@@ -266,23 +266,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className={`${s.section} ${s.ctaSection}`}>
-        <div className="container">
-          <div className={`${s.ctaBox} reveal`}>
-            <div className={s.ctaContent}>
-              <div className={s.sectionLabel} style={{color:'rgba(255,255,255,.5)'}}>Únete al club</div>
-              <h2 className={s.ctaTitle}>Construye tu carrera <em>en finanzas</em></h2>
-              <p className={s.ctaBody}>Abierto a todos los estudiantes interesados en mercados, análisis cuantitativo y tecnología financiera. Escríbenos para la próxima sesión de bienvenida.</p>
-            </div>
-            <div className={s.ctaActions}>
-              <Link to="/contacto" className={s.ctaBtn}>Contactar ahora →</Link>
-              <Link to="/research" className={s.ctaBtnGhost}>Ver informes</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </main>
   )
 }
