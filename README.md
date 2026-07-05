@@ -30,3 +30,4 @@ npm run dev
 | /api/members   | Directorio                      |
 | /api/events    | Eventos                         |
 | /api/research  | Informes                        |
+
