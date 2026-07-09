@@ -25,7 +25,10 @@ function DirectivoCard({ m }) {
     <div className={s.card}>
       <div className={s.photo}>
         <div className={s.photoBg}>
-          <span className={s.initials}>{m.avatar}</span>
+          {m.photo
+            ? <img src={m.photo} alt={m.name} className={s.photoImg} />
+            : <span className={s.initials}>{m.avatar}</span>
+          }
         </div>
         {m.linkedin && (
           <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className={s.linkedinBtn} aria-label={`LinkedIn de ${m.name}`}>
