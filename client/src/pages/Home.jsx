@@ -157,7 +157,7 @@ export default function Home() {
         {/* Metrics bar — z-index 2 */}
         <div className={s.metricsBar}>
           <div className={s.metricsInner}>
-            <Metric val="15+"  label="Socios activos"      delta="↑ Primer mes del club" />
+            <Metric val="19+"  label="Socios activos"      delta="↑ Primer mes del club" />
             <Metric val="6"    label="Áreas de estudio"    delta="↑ Equities, FX, Quant, RF, ESG, M&A" />
             <Metric val="10+"  label="Sesiones anuales"    delta="↑ Calendario 2026" />
             <Metric val="3+"   label="Asesores académicos" delta="↑ Mentores activos" />
@@ -262,23 +262,6 @@ export default function Home() {
                 ))}
               </tbody>
             </table>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className={`${s.section} ${s.ctaSection}`}>
-        <div className="container">
-          <div className={`${s.ctaBox} reveal`}>
-            <div className={s.ctaContent}>
-              <div className={s.sectionLabel} style={{color:'rgba(255,255,255,.5)'}}>Únete al club</div>
-              <h2 className={s.ctaTitle}>Construye tu carrera <em>en finanzas</em></h2>
-              <p className={s.ctaBody}>Abierto a todos los estudiantes interesados en mercados, análisis cuantitativo y tecnología financiera. Escríbenos para la próxima sesión de bienvenida.</p>
-            </div>
-            <div className={s.ctaActions}>
-              <Link to="/contacto" className={s.ctaBtn}>Contactar ahora →</Link>
-              <Link to="/research" className={s.ctaBtnGhost}>Ver informes</Link>
-            </div>
           </div>
         </div>
       </section>
