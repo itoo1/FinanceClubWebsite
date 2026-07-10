@@ -72,7 +72,7 @@ app.get('/api/news',     (req, res) => res.json(NEWS));
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const MEMBERS = [
   // ─── Directiva ───
-  { id:1,  name:'Benjamín Pérez',    role:'Presidente',                         career:'Economía',             year:'4.º', area:'Renta Variable',      avatar:'BP', photo:'/images/directiva/benjamin-perez.webp', bio:'Lidera la estrategia general del club y representa a la organización ante la facultad y los socios institucionales.' , linkedin:'' },
+  { id:1,  name:'Benjamín Pérez',    role:'Presidente',                         career:'Economía',             year:'4.º', area:'Banca de Inversión',      avatar:'BP', photo:'/images/directiva/benjamin-perez.webp', bio:'Lidera la estrategia general del club y representa a la organización ante la facultad y los socios institucionales.' , linkedin:'' },
   { id:2,  name:'Javiera Espinoza',   role:'Vicepresidenta',                      career:'Administración',        year:'4.º', area:'Macro & FX',           avatar:'JE', photo:'/images/directiva/javiera-espinoza.webp', bio:'Coordina las áreas internas del club y supervisa la calidad de los contenidos académicos producidos por los socios.' , linkedin:'' },
   { id:3,  name:'Claudio San Martín', role:'Director de Relaciones Corporativas', career:'Administración',        year:'5.º', area:'Banca de Inversión',  avatar:'CS', photo:'/images/directiva/claudio-san-martin.webp', bio:'Gestiona vínculos con empresas, instituciones financieras y partners para abrir oportunidades a los miembros.' , linkedin:'' },
   { id:4,  name:'Macarena Pereira',  role:'Directora de Comunicación',            career:'Administración',        year:'4.º', area:'Comunicaciones',      avatar:'MP', photo:'/images/directiva/macarena-pereira.webp', bio:'Responsable de la identidad visual del club, redes sociales y comunicación pública de las actividades.' , linkedin:'' },
@@ -80,19 +80,19 @@ const MEMBERS = [
 
   // ─── Miembros Senior ───
   { id:6,  name:'Isidora Aravena',   role:'Directora de Marketing',  career:'Administración',        year:'4.º', area:'Comunicaciones',       avatar:'IA', photo:'/images/directiva/isidora-aravena.webp', bio:'Responsable de la estrategia de marketing y posicionamiento del club en la facultad y redes sociales.' , linkedin:'' },
-  { id:7,  name:'Simoney Vidal Riquelme',        role:'Miembro', career:'Ingeniería Comercial', year:'3.º', area:'—', avatar:'SV', bio:'', linkedin:'' },
-  { id:8,  name:'Diego Ñancuán Ruiz',            role:'Miembro', career:'Ingeniería Comercial', year:'5.º', area:'—', avatar:'DÑ', bio:'', linkedin:'' },
-  { id:9,  name:'Carlos Pizarro Candia',         role:'Miembro', career:'Ingeniería Comercial', year:'4.º', area:'—', avatar:'CP', bio:'', linkedin:'' },
-  { id:10, name:'Nicolás Lerm',                  role:'Miembro', career:'Ingeniería Comercial', year:'2.º', area:'—', avatar:'NL', bio:'', linkedin:'' },
-  { id:11, name:'Cristian Vidal R.',             role:'Miembro', career:'Ingeniería Comercial', year:'5.º', area:'—', avatar:'CV', bio:'', linkedin:'' },
-  { id:12, name:'Daniela Inostroza Sepúlveda',   role:'Miembro', career:'Ingeniería Comercial', year:'4.º', area:'—', avatar:'DI', bio:'', linkedin:'' },
-  { id:13, name:'Cristián Abarca Arellano',      role:'Miembro', career:'Ingeniería Comercial', year:'5.º', area:'—', avatar:'CA', bio:'', linkedin:'' },
-  { id:14, name:'Daniela Saez Valenzuela',       role:'Miembro', career:'Ingeniería Comercial', year:'4.º', area:'—', avatar:'DS', bio:'', linkedin:'' },
-  { id:15, name:'Bastian Bizama Andrade',        role:'Miembro', career:'Ingeniería Comercial', year:'4.º', area:'—', avatar:'BB', bio:'', linkedin:'' },
-  { id:16, name:'Consuelo Alvial Torres',        role:'Miembro', career:'Ingeniería Comercial', year:'3.º', area:'—', avatar:'CA', bio:'', linkedin:'' },
-  { id:17, name:'Jaasiel Cea Cea',               role:'Miembro', career:'Ingeniería Comercial', year:'3.º', area:'—', avatar:'JC', bio:'', linkedin:'' },
-  { id:18, name:'Camilo Torres Vasquez',         role:'Miembro', career:'Ingeniería Comercial', year:'4.º', area:'—', avatar:'CT', bio:'', linkedin:'' },
-  { id:19, name:'Angelina Toledo Villa',         role:'Miembro', career:'Ingeniería Comercial', year:'2.º', area:'—', avatar:'AT', bio:'', linkedin:'' },
+  { id:7,  name:'Simoney Vidal Riquelme',        role:'Miembro', career:'Ingeniería Comercial', year:'3.º', area:'Renta Variable', avatar:'SV', bio:'', linkedin:'' },
+  { id:8,  name:'Diego Ñancuán Ruiz',            role:'Miembro', career:'Ingeniería Comercial', year:'5.º', area:'Renta Variable', avatar:'DÑ', bio:'', linkedin:'' },
+  { id:9,  name:'Carlos Pizarro Candia',         role:'Miembro', career:'Ingeniería Comercial', year:'4.º', area:'Renta Variable', avatar:'CP', bio:'', linkedin:'' },
+  { id:10, name:'Nicolás Lerm',                  role:'Miembro', career:'Ingeniería Comercial', year:'2.º', area:'Renta Variable', avatar:'NL', bio:'', linkedin:'' },
+  { id:11, name:'Cristian Vidal R.',             role:'Miembro', career:'Ingeniería Comercial', year:'5.º', area:'Renta Variable', avatar:'CV', bio:'', linkedin:'' },
+  { id:12, name:'Daniela Inostroza Sepúlveda',   role:'Miembro', career:'Ingeniería Comercial', year:'4.º', area:'Renta Variable', avatar:'DI', bio:'', linkedin:'' },
+  { id:13, name:'Cristián Abarca Arellano',      role:'Miembro', career:'Ingeniería Comercial', year:'5.º', area:'Renta Variable', avatar:'CA', bio:'', linkedin:'' },
+  { id:14, name:'Daniela Saez Valenzuela',       role:'Miembro', career:'Ingeniería Comercial', year:'4.º', area:'Renta Variable', avatar:'DS', bio:'', linkedin:'' },
+  { id:15, name:'Bastian Bizama Andrade',        role:'Miembro', career:'Ingeniería Comercial', year:'4.º', area:'Renta Variable', avatar:'BB', bio:'', linkedin:'' },
+  { id:16, name:'Consuelo Alvial Torres',        role:'Miembro', career:'Ingeniería Comercial', year:'3.º', area:'Renta Variable', avatar:'CA', bio:'', linkedin:'' },
+  { id:17, name:'Jaasiel Cea Cea',               role:'Miembro', career:'Ingeniería Comercial', year:'3.º', area:'Renta Variable', avatar:'JC', bio:'', linkedin:'' },
+  { id:18, name:'Camilo Torres Vasquez',         role:'Miembro', career:'Ingeniería Comercial', year:'4.º', area:'Renta Variable', avatar:'CT', bio:'', linkedin:'' },
+  { id:19, name:'Angelina Toledo Villa',         role:'Miembro', career:'Ingeniería Comercial', year:'2.º', area:'Renta Variable', avatar:'AT', bio:'', linkedin:'' },
 ];
 
 const EVENTS = [

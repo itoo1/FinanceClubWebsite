@@ -158,7 +158,7 @@ export default function Home() {
         <div className={s.metricsBar}>
           <div className={s.metricsInner}>
             <Metric val="19+"  label="Socios activos"      delta="↑ Primer mes del club" />
-            <Metric val="6"    label="Áreas de estudio"    delta="↑ Equities, FX, Quant, RF, ESG, M&A" />
+            <Metric val="5"    label="Áreas de estudio"    delta="↑ Equities, Macro, Banca, Comms, Formación" />
             <Metric val="10+"  label="Sesiones anuales"    delta="↑ Calendario 2026" />
             <Metric val="3+"   label="Asesores académicos" delta="↑ Mentores activos" />
           </div>

@@ -3,7 +3,7 @@ import React, { useState, useMemo } from 'react'
 import { useMembers } from '../hooks/useData'
 import s from './Directorio.module.css'
 
-const AREAS = ['Todos','Renta Variable','Macro & FX','Renta Fija','Derivados','Quant / ML','ESG','M&A / Valoración','Banca de Inversión','Finanzas Sostenibles','Comunicaciones','Formación']
+const AREAS = ['Todos','Renta Variable','Macro & FX','Banca de Inversión','Comunicaciones','Formación']
 
 function roleGroup(role) {
   if (['Presidenta','Presidente','Vicepresidente','Vicepresidenta','Directora de Relaciones Corporativas','Director de Relaciones Corporativas','Directora de Marketing y Comunicaciones','Director de Marketing y Comunicaciones','Directora de Eventos y Formación','Director de Eventos y Formación','Directora de Comunicación','Director de Comunicación','Directora de Marketing','Director de Marketing'].includes(role)) return 'Directiva'
