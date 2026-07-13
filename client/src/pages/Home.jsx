@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useEvents } from '../hooks/useData'
-import { useScrollReveal, useCounter, useParallax } from '../hooks/useEffects'
+import { useScrollReveal, useParallax } from '../hooks/useEffects'
 import s from './Home.module.css'
 
 const PILLARS = [
@@ -63,18 +63,6 @@ const PARTNERS = [
  
 ]
 
-function Metric({ val, label, delta }) {
-  const isNum = !isNaN(parseInt(val))
-  const suffix = val.replace(/[0-9]/g, '')
-  const { count, ref } = useCounter(isNum ? val : 0, 1600)
-  return (
-    <div className={s.metric} ref={ref}>
-      <div className={s.metricVal}>{isNum ? `${count}${suffix}` : val}</div>
-      <div className={s.metricLabel}>{label}</div>
-      <div className={s.metricDelta}>{delta}</div>
-    </div>
-  )
-}
 
 export default function Home() {
   const { events } = useEvents()
@@ -154,21 +142,17 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Metrics bar — z-index 2 */}
-        <div className={s.metricsBar}>
-          <div className={s.metricsInner}>
-            <Metric val="19+"  label="Socios activos"      delta="↑ Primer mes del club" />
-            <Metric val="5"    label="Áreas de estudio"    delta="↑ Equities, Macro, Banca, Comms, Formación" />
-            <Metric val="10+"  label="Sesiones anuales"    delta="↑ Calendario 2026" />
-            <Metric val="3+"   label="Asesores académicos" delta="↑ Mentores activos" />
+        {/* Editorial statement — replaces generic AI-style metrics bar */}
+        <div className={s.statementBand}>
+          <div className={s.statementInner}>
+            <span className={s.statementMark}>“</span>
+            <p className={s.statementText}>
+              Formamos criterio antes que opinión. Rigor antes que velocidad.
+              Es la primera generación de analistas de la <em>Universidad de Concepción</em>.
+            </p>
+            <div className={s.statementByline}>Finance Club UdeC · Est. 2026</div>
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <button className={s.scrollHint} onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} aria-label="Bajar al contenido">
-          <span className={s.scrollText}>Explorar</span>
-          <span className={s.scrollLine} />
-        </button>
 
       </section>
 
