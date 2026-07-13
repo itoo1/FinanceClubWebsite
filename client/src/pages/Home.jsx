@@ -142,19 +142,19 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Editorial statement — replaces generic AI-style metrics bar */}
-        <div className={s.statementBand}>
-          <div className={s.statementInner}>
-            <span className={s.statementMark}>“</span>
-            <p className={s.statementText}>
-              Potenciamos el desarrollo profesional en la industria financiera.
-              Conectamos a la <em>Universidad de Concepción</em> con la industria.
-            </p>
-            <div className={s.statementByline}>Finance Club UdeC · Est. 2026</div>
-          </div>
-        </div>
-
       </section>
+
+      {/* Editorial statement band — appears on scroll with slide-in from left */}
+      <div className={s.statementBand}>
+        <div className={`${s.statementInner} ${s.statementReveal} reveal`}>
+          <span className={s.statementMark}>“</span>
+          <p className={s.statementText}>
+            Potenciamos el desarrollo profesional en la industria financiera.
+            Conectamos a la <em>Universidad de Concepción</em> con la industria.
+          </p>
+          <div className={s.statementByline}>Finance Club UdeC · Est. 2026</div>
+        </div>
+      </div>
 
       {/* ── PILLARS ── */}
       <section className={s.section}>
