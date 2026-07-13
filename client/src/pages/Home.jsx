@@ -147,8 +147,8 @@ export default function Home() {
           <div className={s.statementInner}>
             <span className={s.statementMark}>“</span>
             <p className={s.statementText}>
-              Formamos criterio antes que opinión. Rigor antes que velocidad.
-              Es la primera generación de analistas de la <em>Universidad de Concepción</em>.
+              Potenciamos el desarrollo profesional en la industria financiera.
+              Conectamos a la <em>Universidad de Concepción</em> con la industria.
             </p>
             <div className={s.statementByline}>Finance Club UdeC · Est. 2026</div>
           </div>
