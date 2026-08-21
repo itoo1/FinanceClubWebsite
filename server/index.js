@@ -98,6 +98,7 @@ const MEMBERS = [
 const EVENTS = [
   { id:0, day:'25', month:'JUN', name:'Inicio Período de Inscripciones',   time:'00:00', location:'Online',            format:'Online',     category:'Inscripción', desc:'Apertura de inscripciones para nuevos miembros del club. Plazo hasta el 6 de julio.', image:'', type:'club' },
   { id:7, day:'12', month:'AGO', name:'Get to Know Santiago',             time:'19:30', location:'Santiago',          format:'Presencial', category:'Conferencia', desc:'Evento organizado por Bain & Company. Instancia de networking y acercamiento a la industria de consultoría estratégica.', image:'', type:'club' },
+  { id:8, day:'19', month:'AGO', name:'Inicio Certificación Bloomberg Market Concepts', time:'12:15', location:'Lab. Finanzas · FACEA', format:'Presencial', category:'Inscripción', desc:'Comienzo del proceso de certificación oficial Bloomberg Market Concepts (BMC). Sesiones el 19 y 20 de agosto en el Laboratorio de Finanzas.', image:'', type:'club' },
 ];
 
 // Eventos externos recomendados — organizados por terceros (no por el club)
