@@ -428,9 +428,8 @@
   .heroTitle { font-size: 34px; }
   .heroLead { font-size: 14px; }
 }
-/* ── PERFORMANCE: suppress video on small screens (data + battery) ── */
+/* Mobile hero: video kept enabled (fallback gradient only if video fails) */
 @media (max-width: 600px) {
-  .video { display: none; }
   .hero {
     background:
       radial-gradient(ellipse 80% 60% at 70% 20%, rgba(61,111,204,0.18), transparent),
