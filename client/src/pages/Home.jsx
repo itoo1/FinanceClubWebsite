@@ -11,12 +11,49 @@ const PILLARS = [
   { num:'04', area:'Ética',     title:'Finanzas responsables', body:'Debatimos el impacto social del capital, criterios ESG y la responsabilidad del sector financiero en la economía sostenible.' },
 ]
 
-const ACTIVITIES = [
-  ['Sesiones de análisis semanal',     'Jueves · 19:00', 'Presencial',       'Activo'],
-  ['Talleres de modelos financieros',  'Quincenal',      'Lab. Finanzas',  'Activo'],
-  ['Competición de carteras',          'Semestral',      'Online',            'Activo'],
-  ['Conferencia anual de inversión',   'Junio',          'Híbrido',           'Planificado'],
-  ['Publicación de informes research', 'Mensual',        'Digital',           'Activo'],
+const GALLERY = [
+  {
+    src: '/images/galeria/bloomberg-oficinas.webp',
+    partner: 'Bloomberg',
+    location: 'Santiago',
+    title: 'Visita a las oficinas y sesión en Terminal Bloomberg',
+    year: '2026',
+  },
+  {
+    src: '/images/galeria/itau-edificio.webp',
+    partner: 'Itaú',
+    location: 'Santiago',
+    title: 'Charla con Luis Pérez, operador senior de la mesa de dinero',
+    year: '2026',
+  },
+  {
+    src: '/images/galeria/bain-santiago-charla.webp',
+    partner: 'Bain & Company',
+    location: 'Santiago',
+    title: 'Charla proceso selectivo AC / ACI 2026',
+    year: '2026',
+  },
+  {
+    src: '/images/galeria/bain-networking.webp',
+    partner: 'Bain & Company',
+    location: 'Santiago',
+    title: 'Instancia de networking con partners y consultores',
+    year: '2026',
+  },
+  {
+    src: '/images/galeria/santiago-viaje.webp',
+    partner: 'Delegación UdeC',
+    location: 'Santiago',
+    title: 'Viaje institucional del club al distrito financiero',
+    year: '2026',
+  },
+  {
+    src: '/images/galeria/directiva-lab-finanzas.webp',
+    partner: 'Finance Club UdeC',
+    location: 'Concepción',
+    title: 'Directiva 2026 en el Laboratorio de Finanzas FACEA',
+    year: '2026',
+  },
 ]
 
 const PARTNERS = [
@@ -221,35 +258,108 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── ACTIVITIES ── */}
+      {/* ── EDITORIAL GALLERY — Actividades ── */}
       <section className={s.section}>
         <div className="container">
           <div className={`${s.sectionHeader} reveal`}>
             <div>
               <div className={s.sectionLabel}>Actividades</div>
-              <h2 className={s.sectionTitle}>Semestre<br /><em>en curso</em></h2>
+              <h2 className={s.sectionTitle}>Nuestras<br /><em>experiencias</em></h2>
             </div>
             <Link to="/eventos" className={s.sectionMore}>Ver calendario →</Link>
           </div>
-          <div className={`reveal`}>
-            <table className={s.table}>
-              <thead>
-                <tr><th>Actividad</th><th>Frecuencia</th><th>Formato</th><th>Estado</th></tr>
-              </thead>
-              <tbody>
-                {ACTIVITIES.map(([act,freq,fmt,status]) => (
-                  <tr key={act} className={s.tableRow}>
-                    <td><strong>{act}</strong></td>
-                    <td>{freq}</td><td>{fmt}</td>
-                    <td><span className={`${s.badge} ${status==='Activo'?s.badgeGreen:s.badgeBlue}`}>{status}</span></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <p className={`${s.galleryLead} reveal`}>
+            Charlas, visitas y sesiones de networking con las principales firmas de la industria financiera latinoamericana.
+          </p>
         </div>
+
+        <Gallery items={GALLERY} />
       </section>
 
     </main>
+  )
+}
+
+/* ══════════════════════════════════════
+   GALLERY — editorial horizontal carousel
+   • Drag/swipe on touch
+   • Scroll horizontally on trackpad
+   • Buttons for desktop navigation
+   • Progress line + partial next image visible
+══════════════════════════════════════ */
+function Gallery({ items }) {
+  const trackRef = React.useRef(null)
+  const [progress, setProgress] = React.useState(0)
+  const [canPrev, setCanPrev] = React.useState(false)
+  const [canNext, setCanNext] = React.useState(true)
+
+  const updateState = React.useCallback(() => {
+    const el = trackRef.current
+    if (!el) return
+    const max = el.scrollWidth - el.clientWidth
+    const p = max > 0 ? el.scrollLeft / max : 0
+    setProgress(p)
+    setCanPrev(el.scrollLeft > 4)
+    setCanNext(el.scrollLeft < max - 4)
+  }, [])
+
+  React.useEffect(() => {
+    const el = trackRef.current
+    if (!el) return
+    updateState()
+    el.addEventListener('scroll', updateState, { passive: true })
+    window.addEventListener('resize', updateState)
+    return () => {
+      el.removeEventListener('scroll', updateState)
+      window.removeEventListener('resize', updateState)
+    }
+  }, [updateState])
+
+  const scrollByPage = (dir) => {
+    const el = trackRef.current
+    if (!el) return
+    // Scroll by ~85% of viewport for the "one full card + next peek" feel
+    const amount = el.clientWidth * 0.72 * dir
+    el.scrollBy({ left: amount, behavior: 'smooth' })
+  }
+
+  return (
+    <div className={s.galleryWrap}>
+      <div className={s.galleryTrack} ref={trackRef}>
+        {items.map((item, i) => (
+          <figure className={s.galleryCard} key={i}>
+            <div className={s.galleryImgWrap}>
+              <img src={item.src} alt={item.title} loading="lazy" className={s.galleryImg} />
+              <div className={s.galleryOverlay}>
+                <div className={s.galleryOverlayInner}>
+                  <div className={s.galleryPartner}>
+                    <span>{item.partner}</span>
+                    <span className={s.galleryDot}>·</span>
+                    <span className={s.galleryLoc}>{item.location}</span>
+                  </div>
+                  <p className={s.galleryTitle}>{item.title}</p>
+                  <span className={s.galleryYear}>{item.year}</span>
+                </div>
+              </div>
+            </div>
+          </figure>
+        ))}
+        <div className={s.galleryPad} aria-hidden="true" />
+      </div>
+
+      <div className={`container ${s.galleryControls}`}>
+        <div className={s.galleryProgress}>
+          <div className={s.galleryProgressBar} style={{ transform: `scaleX(${progress})` }} />
+        </div>
+        <div className={s.galleryButtons}>
+          <button className={s.galleryBtn} onClick={() => scrollByPage(-1)} disabled={!canPrev} aria-label="Anterior">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button className={s.galleryBtn} onClick={() => scrollByPage(1)} disabled={!canNext} aria-label="Siguiente">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
   )
 }
