@@ -96,6 +96,12 @@ const PARTNERS = [
     desc:'Una de las consultoras estratégicas más reconocidas del mundo. Colabora con el club en eventos, formación profesional y acercamiento al ecosistema corporativo global.',
     tag:'Socio en eventos',
   },
+  {
+    logo: <div className={s.pLogoBlackRock}>BlackRock</div>,
+    cat:'Gestión de Activos', name:'BlackRock',
+    desc:'Mayor gestora de activos del mundo. Aporta perspectiva global sobre mercados, gestión de portafolios institucionales y estrategia de inversión de largo plazo.',
+    tag:'Socio en eventos',
+  },
 
  
 ]
