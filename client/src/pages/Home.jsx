@@ -99,7 +99,7 @@ const PARTNERS = [
   {
     logo: <div className={s.pLogoBlackRock}>BlackRock</div>,
     cat:'Gestión de Activos', name:'BlackRock',
-    desc:'Mayor gestora de activos del mundo. Aporta perspectiva global sobre mercados, gestión de portafolios institucionales y estrategia de inversión de largo plazo.',
+    desc:'Mayor gestora de activos del mundo. Apoya al club con actividades y experiencias de formación profesional en finanzas globales.',
     tag:'Socio en eventos',
   },
 
