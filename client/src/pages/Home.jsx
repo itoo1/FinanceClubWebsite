@@ -102,6 +102,12 @@ const PARTNERS = [
     desc:'Mayor gestora de activos del mundo. Apoya al club con actividades y experiencias de formación profesional en finanzas globales.',
     tag:'Socio en eventos',
   },
+  {
+    logo: <div className={s.pLogoJPM}>J.P.Morgan</div>,
+    cat:'Banca de Inversión', name:'J.P. Morgan',
+    desc:'Uno de los bancos de inversión más influyentes del mundo. Colabora con el club a través de charlas sobre mercados globales, banca de inversión y desarrollo profesional en finanzas.',
+    tag:'Socio en eventos',
+  },
 
  
 ]

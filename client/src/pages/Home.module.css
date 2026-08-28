@@ -281,6 +281,19 @@
   text-transform: none;
 }
 
+.pLogoJPM {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #b8926b;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  text-transform: none;
+  line-height: 1;
+}
+
 .pLogoTau { font-family:var(--serif); font-size:24px; font-weight:700; letter-spacing:.04em; color:var(--black); opacity:.7; display:flex; align-items:center; gap:8px; transition:opacity .2s; }
 .partnerCard:hover .pLogoTau { opacity:1; }
 .tauGreek { font-size:28px; font-style:italic; color:var(--accent); line-height:1; }
