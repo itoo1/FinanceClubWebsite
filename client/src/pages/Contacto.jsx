@@ -34,7 +34,7 @@ export default function Contacto() {
             <div className={s.infoSection}>
               <div className={s.secTitle}>Información de contacto</div>
               {[
-                ['Email',    'financeclubudec@gmail.com'],
+                ['Email',    'financeclub@udec.cl'],
                 ['Sesiones', 'Miércoles · 12:00 h · Lab. Finanzas'],
                 ['Sede',     'FACEA · Facultad de Cs. Económicas y Administrativas · Lab. Finanzas · UdeC'],
               ].map(([l,v]) => (

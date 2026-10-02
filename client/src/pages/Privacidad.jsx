@@ -25,7 +25,7 @@ const sections = [
   },
   {
     title: '6. Tus derechos (Ley 19.628)',
-    text: 'Puedes solicitar acceso, rectificación o eliminación de tus datos en cualquier momento escribiendo a financeclubudec@gmail.com.'
+    text: 'Puedes solicitar acceso, rectificación o eliminación de tus datos en cualquier momento escribiendo a financeclub@udec.cl.'
   },
   {
     title: '7. Limitación de responsabilidad',
