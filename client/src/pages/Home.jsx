@@ -15,7 +15,7 @@ const GALLERY = [
   {
     src: '/images/galeria/lse-charla.webp',
     partner: 'London School of Economics · Fundación Luksic',
-    location: 'Santiago',
+    location: 'Concepción',
     title: 'Charla de Nathan Brennan sobre programas de postgrado en LSE',
     year: '2026',
   },
