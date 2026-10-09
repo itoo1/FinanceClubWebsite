@@ -294,6 +294,23 @@
   line-height: 1;
 }
 
+.pLogoLSE {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+.pLogoLSE span {
+  background: #d81e1e;
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  padding: 7px 10px 6px;
+  line-height: 1;
+  display: inline-block;
+}
+
 .pLogoTau { font-family:var(--serif); font-size:24px; font-weight:700; letter-spacing:.04em; color:var(--black); opacity:.7; display:flex; align-items:center; gap:8px; transition:opacity .2s; }
 .partnerCard:hover .pLogoTau { opacity:1; }
 .tauGreek { font-size:28px; font-style:italic; color:var(--accent); line-height:1; }

@@ -54,6 +54,13 @@ const GALLERY = [
     title: 'Directiva 2026 en el Laboratorio de Finanzas FACEA',
     year: '2026',
   },
+  {
+    src: '/images/galeria/fen-xtb-kickoff.webp',
+    partner: 'FEN Investment Group · XTB',
+    location: 'Santiago',
+    title: 'Kick-off del Torneo Interuniversitario de Trading con la directiva del club',
+    year: '2026',
+  },
 ]
 
 const PARTNERS = [
@@ -107,6 +114,12 @@ const PARTNERS = [
     cat:'Banca de Inversión', name:'J.P. Morgan',
     desc:'Uno de los bancos de inversión más influyentes del mundo. Colabora con el club a través de charlas sobre mercados globales, banca de inversión y desarrollo profesional en finanzas.',
     tag:'Socio en eventos',
+  },
+  {
+    logo: <div className={s.pLogoLSE}><span>LSE</span></div>,
+    cat:'Formación Académica Internacional', name:'London School of Economics',
+    desc:'Una de las instituciones más prestigiosas del mundo en economía y finanzas. Colabora con el club organizando charlas sobre el proceso de admisión y postulación a sus programas de MSc.',
+    tag:'Socio académico',
   },
 
  
