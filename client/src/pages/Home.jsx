@@ -116,7 +116,7 @@ const PARTNERS = [
     tag:'Socio en eventos',
   },
   {
-    logo: <div className={s.pLogoLSE}><span>LSE</span></div>,
+    logo: <img src="/images/partners/lse-logo.png" alt="London School of Economics" className={s.pLogoLSEImg} />,
     cat:'Formación Académica Internacional', name:'London School of Economics',
     desc:'Una de las instituciones más prestigiosas del mundo en economía y finanzas. Colabora con el club organizando charlas sobre el proceso de admisión y postulación a sus programas de MSc.',
     tag:'Socio académico',
@@ -259,28 +259,9 @@ export default function Home() {
           <p className={`${s.partnersLead} reveal`}>
             Instituciones y empresas que respaldan la formación financiera del club y la proyección profesional de sus miembros.
           </p>
-          <div className={s.partnersGrid}>
-            {PARTNERS.map((p, i) => p.placeholder ? (
-              <div key={i} className={`${s.partnerCard} ${s.placeholder} reveal d${i+1}`}>
-                <div className={s.placeholderInner}>
-                  <span className={s.plus}>+</span>
-                  <span className={s.placeholderText}>Próximo partner</span>
-                </div>
-              </div>
-            ) : (
-              <div className={`${s.partnerCard} reveal d${i+1}`} key={i}>
-                <div className={s.partnerTop}>
-                  <div className={s.partnerLogo}>{p.logo}</div>
-                  <div className={s.partnerCat}>{p.cat}</div>
-                </div>
-                <div className={s.partnerName}>{p.name}</div>
-                <p className={s.partnerDesc}>{p.desc}</p>
-                <span className={s.partnerTag}>{p.tag}</span>
-                <div className={s.partnerHoverLine} />
-              </div>
-            ))}
-          </div>
         </div>
+
+        <PartnersCarousel items={PARTNERS} />
       </section>
 
       {/* ── EDITORIAL GALLERY — Actividades ── */}
@@ -368,6 +349,81 @@ function Gallery({ items }) {
               </div>
             </div>
           </figure>
+        ))}
+        <div className={s.galleryPad} aria-hidden="true" />
+      </div>
+
+      <div className={`container ${s.galleryControls}`}>
+        <div className={s.galleryProgress}>
+          <div className={s.galleryProgressBar} style={{ transform: `scaleX(${progress})` }} />
+        </div>
+        <div className={s.galleryButtons}>
+          <button className={s.galleryBtn} onClick={() => scrollByPage(-1)} disabled={!canPrev} aria-label="Anterior">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button className={s.galleryBtn} onClick={() => scrollByPage(1)} disabled={!canNext} aria-label="Siguiente">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+/* ══════════════════════════════════════
+   PARTNERS CAROUSEL — horizontal, same
+   mechanics as Gallery for consistency
+══════════════════════════════════════ */
+function PartnersCarousel({ items }) {
+  const trackRef = React.useRef(null)
+  const [progress, setProgress] = React.useState(0)
+  const [canPrev, setCanPrev] = React.useState(false)
+  const [canNext, setCanNext] = React.useState(true)
+
+  const updateState = React.useCallback(() => {
+    const el = trackRef.current
+    if (!el) return
+    const max = el.scrollWidth - el.clientWidth
+    const p = max > 0 ? el.scrollLeft / max : 0
+    setProgress(p)
+    setCanPrev(el.scrollLeft > 4)
+    setCanNext(el.scrollLeft < max - 4)
+  }, [])
+
+  React.useEffect(() => {
+    const el = trackRef.current
+    if (!el) return
+    updateState()
+    el.addEventListener('scroll', updateState, { passive: true })
+    window.addEventListener('resize', updateState)
+    return () => {
+      el.removeEventListener('scroll', updateState)
+      window.removeEventListener('resize', updateState)
+    }
+  }, [updateState])
+
+  const scrollByPage = (dir) => {
+    const el = trackRef.current
+    if (!el) return
+    const amount = el.clientWidth * 0.72 * dir
+    el.scrollBy({ left: amount, behavior: 'smooth' })
+  }
+
+  const visible = items.filter(p => !p.placeholder)
+
+  return (
+    <div className={s.partnersCarousel}>
+      <div className={s.partnersTrack} ref={trackRef}>
+        {visible.map((p, i) => (
+          <div className={s.partnerCardCarousel} key={i}>
+            <div className={s.partnerTop}>
+              <div className={s.partnerLogo}>{p.logo}</div>
+              <div className={s.partnerCat}>{p.cat}</div>
+            </div>
+            <div className={s.partnerName}>{p.name}</div>
+            <p className={s.partnerDesc}>{p.desc}</p>
+            <span className={s.partnerTag}>{p.tag}</span>
+            <div className={s.partnerHoverLine} />
+          </div>
         ))}
         <div className={s.galleryPad} aria-hidden="true" />
       </div>

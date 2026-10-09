@@ -294,21 +294,11 @@
   line-height: 1;
 }
 
-.pLogoLSE {
-  display: flex;
-  align-items: center;
-  height: 40px;
-}
-.pLogoLSE span {
-  background: #d81e1e;
-  color: #ffffff;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  letter-spacing: 0.02em;
-  padding: 7px 10px 6px;
-  line-height: 1;
-  display: inline-block;
+.pLogoLSEImg {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .pLogoTau { font-family:var(--serif); font-size:24px; font-weight:700; letter-spacing:.04em; color:var(--black); opacity:.7; display:flex; align-items:center; gap:8px; transition:opacity .2s; }
@@ -783,4 +773,66 @@
   .galleryCard { flex: 0 0 90vw; }
   .galleryTitle { font-size: 15px; }
   .galleryPartner { font-size: 10px; }
+}
+/* ══════════════════════════════════════════════
+   PARTNERS CAROUSEL
+   Same scroll/snap/drag as editorial gallery
+   but card dimensions optimized for logo + desc
+══════════════════════════════════════════════ */
+.partnersCarousel {
+  position: relative;
+  margin-top: 32px;
+}
+
+.partnersTrack {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0 64px 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+.partnersTrack::-webkit-scrollbar { display: none; }
+.partnersTrack:active { cursor: grabbing; }
+
+.partnerCardCarousel {
+  flex: 0 0 min(42vw, 460px);
+  scroll-snap-align: start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 32px 28px 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  transition: background var(--tr-med), transform var(--tr-med), border-color var(--tr-med), box-shadow var(--tr-med);
+  user-select: none;
+}
+.partnerCardCarousel:hover {
+  background: var(--surface2);
+  transform: translateY(-3px);
+  border-color: var(--border2);
+  box-shadow: var(--shadow-card);
+}
+.partnerCardCarousel:hover .partnerHoverLine { transform: scaleX(1); }
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .partnersTrack { padding: 0 48px 8px; }
+}
+@media (max-width: 1100px) {
+  .partnersTrack { padding: 0 32px 8px; }
+  .partnerCardCarousel { flex: 0 0 min(60vw, 440px); }
+}
+@media (max-width: 768px) {
+  .partnersTrack { padding: 0 20px 8px; gap: 14px; }
+  .partnerCardCarousel { flex: 0 0 82vw; padding: 24px 22px 20px; min-height: 280px; }
+}
+@media (max-width: 480px) {
+  .partnersTrack { padding: 0 16px 8px; }
+  .partnerCardCarousel { flex: 0 0 86vw; }
 }
