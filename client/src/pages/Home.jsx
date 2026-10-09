@@ -13,6 +13,20 @@ const PILLARS = [
 
 const GALLERY = [
   {
+    src: '/images/galeria/lse-charla.webp',
+    partner: 'London School of Economics · Fundación Luksic',
+    location: 'Santiago',
+    title: 'Charla de Nathan Brennan sobre programas de postgrado en LSE',
+    year: '2026',
+  },
+  {
+    src: '/images/galeria/fen-xtb-kickoff.webp',
+    partner: 'FEN Investment Group · XTB',
+    location: 'Santiago',
+    title: 'Kick-off del Torneo Interuniversitario de Trading con la directiva del club',
+    year: '2026',
+  },
+  {
     src: '/images/galeria/bloomberg-oficinas.webp',
     partner: 'Bloomberg',
     location: 'Santiago',
@@ -52,13 +66,6 @@ const GALLERY = [
     partner: 'Finance Club UdeC',
     location: 'Concepción',
     title: 'Directiva 2026 en el Laboratorio de Finanzas FACEA',
-    year: '2026',
-  },
-  {
-    src: '/images/galeria/fen-xtb-kickoff.webp',
-    partner: 'FEN Investment Group · XTB',
-    location: 'Santiago',
-    title: 'Kick-off del Torneo Interuniversitario de Trading con la directiva del club',
     year: '2026',
   },
 ]
@@ -110,7 +117,7 @@ const PARTNERS = [
     tag:'Socio en eventos',
   },
   {
-    logo: <div className={s.pLogoJPM}>J.P.Morgan</div>,
+    logo: <img src="/images/partners/jpmorgan-logo.png" alt="J.P. Morgan" className={s.pLogoJPMImg} />,
     cat:'Banca de Inversión', name:'J.P. Morgan',
     desc:'Uno de los bancos de inversión más influyentes del mundo. Colabora con el club a través de charlas sobre mercados globales, banca de inversión y desarrollo profesional en finanzas.',
     tag:'Socio en eventos',
